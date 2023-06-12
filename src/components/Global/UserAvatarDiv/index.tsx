@@ -1,7 +1,11 @@
 import styles from ".style.module.scss";
 
-const Component = () => {
-    return <div className={styles.div}></div>;
+const UserAvatar = () => {
+    return (
+        <div>
+            <img src="" alt="" />
+        </div>
+    );
 };
 
-export default Component;
+export default UserAvatar;

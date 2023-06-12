@@ -1,7 +1,13 @@
 import styles from ".style.module.scss";
+import ProductCard from "../ProductCardLi";
 
-const Component = () => {
-    return <div className={styles.div}></div>;
+const ProductList = () => {
+    return (
+        <ul>
+            {/* List of product cards */}
+            <ProductCard />
+        </ul>
+    );
 };
 
-export default Component;
+export default ProductList;

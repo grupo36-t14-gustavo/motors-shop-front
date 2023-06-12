@@ -1,7 +1,9 @@
 import styles from ".style.module.scss";
 
 const Component = () => {
-    return <div className={styles.div}></div>;
+    return <aside>
+        
+    </aside>;
 };
 
 export default Component;
