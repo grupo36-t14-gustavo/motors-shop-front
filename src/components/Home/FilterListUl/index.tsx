@@ -1,7 +1,13 @@
 import styles from ".style.module.scss";
+import FilterType from "../FilterTypeLi";
 
-const Component = () => {
-    return <div className={styles.div}></div>;
+const FilterList = () => {
+    return (
+        <ul>
+            {/* List of FilterType */}
+            <FilterType />
+        </ul>
+    );
 };
 
-export default Component;
+export default FilterList;
