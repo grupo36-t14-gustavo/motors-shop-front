@@ -1,4 +1,3 @@
-import styles from ".style.module.scss";
 import RegisterRedirect from "../RegisterRedirectAnchor";
 import UserAvatar from "../UserAvatarDiv";
 
