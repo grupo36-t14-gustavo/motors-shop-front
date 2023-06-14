@@ -1,10 +1,10 @@
-import styles from ".style.module.scss";
+import styles from "./style.module.scss";
 import UserContainer from "../UserContainerSpan";
 import TagContainer from "../TagContainerDiv";
 
 const ProductCard = () => {
     return (
-        <li>
+        <li className={styles.product_card}>
             <img src="" alt="" />
             <h3>Porche 718</h3>
             <p>
@@ -12,7 +12,7 @@ const ProductCard = () => {
                 industry. Lorem...
             </p>
             <UserContainer />
-            <div>
+            <div className={styles.product_card__tag_price_div}>
                 <TagContainer />
                 <span>R$ 00.000,00</span>
             </div>
