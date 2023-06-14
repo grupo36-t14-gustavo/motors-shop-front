@@ -1,5 +1,7 @@
 import { z, } from "zod";
-import Button from "../Global/Button";
+import Button from "../Global/Button/index";
+import Input from "../Global/Input/index";
+import Label from "../Global/Label/index";
 const schemaRegister = z.object({
     name: z.string(),
     email: z.string().email(),
@@ -37,22 +39,22 @@ const FormRegister = () =>{
                 <p>Registro</p>
             </span>
             <form onSubmit={hadleSubmit}>
-                <label htmlFor="nameUserNew">Nome</label>
-                <input type="text" name="" id="nameUserNew" placeholder="como gostaria de ser chamado?"/>
-                <label htmlFor="EmailUserNew" >Email</label>
-                <input type="email" id="EmailUserNew" placeholder="Qual é seu email?" />
-                <label htmlFor="avatarUser" >Avatar</label>
-                <input type="url" id="avatarUser" placeholder="Qual é seu email?" />
-                <label htmlFor="password">Senha</label>
+                <Label htmlFor="nameUserNew" name="Nome" />
+                <Input id="nameUserNew" placeholder="como gostaria de ser chamado?"/>
+                <Label htmlFor="EmailUserNew" name="Email"/ >
+                <Input id="EmailUserNew" placeholder="Qual é seu email?" />
+                <Label htmlFor="avatarUser" name="Avatar"/>
+                <Input id="avatarUser" placeholder="Qual é seu email?" />
+                <Label htmlFor="password" name="Senha"/>
                 <input type="password" id="password" placeholder="lembre-se de criar uma senha segura." />
-                <label htmlFor="birthdate">Data de nascimento</label>
-                <input type="text" id="birthdate" placeholder="Digite sua data de nascimento exemplo: 17/05/2004"/>
-                <label htmlFor="cellphone">Telefone</label>
-                <input type="text" id="cellphone" placeholder="qual é seu número?" />
-                <label htmlFor="cpf">Cpf</label>
-                <input type="string" id="cpf" placeholder="Qual é seu cpf?"/>
-                <label htmlFor="bioUser">Bio</label>
-                <input type="string" id="bioUser" placeholder="Escreva Sobre voçê." />
+                <Label htmlFor="birthdate"name="Data de nascimento"/>
+                <Input id="birthdate" placeholder="Digite sua data de nascimento exemplo: 17/05/2004"/>
+                <Label htmlFor="cellphone" name="Telefone"/>
+                <Input id="cellphone" placeholder="qual é seu número?" />
+                <Label htmlFor="cpf" name="Cpf"/>
+                <Input id="cpf" placeholder="Qual é seu cpf?"/>
+                <Label htmlFor="bioUser" name="Bio"/>
+                <Input id="bioUser" placeholder="Escreva Sobre voçê." />
                 <Button name="Registrar"/>
             </form>
 

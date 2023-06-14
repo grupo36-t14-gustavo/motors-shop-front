@@ -1,6 +1,7 @@
 import { z } from "zod";
 import Button from "../Global/Button";
-
+import Input from "../Global/Input/index";
+import Label from "../Global/Label/index";
 const schemaLogin = z.object({
     email: z.string().email(),
     password: z.string()
@@ -25,9 +26,9 @@ const LoginForm = () =>{
         <div>
             <h1>Motors Shop</h1>
             <form onSubmit={handleSubmit}>
-                <label htmlFor="emailInput">Email</label>
-                <input type="text" id="emailInput" placeholder="qual é seu email?" />
-                <label htmlFor="passwordInput"></label>
+                <Label htmlFor="emailInput" name="Email"/>
+                <Input id="emailInput" placeholder="qual é seu email?" />
+                <Label htmlFor="passwordInput" name="Senha"/>
                 <input type="password" id="passwordInput" placeholder="Digite sua senha ..." />
                 <Button name="Logar"/>
             </form>
