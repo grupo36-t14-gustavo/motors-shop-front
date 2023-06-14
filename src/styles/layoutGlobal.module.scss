@@ -1,0 +1,34 @@
+@import "../styles/globals.module.scss";
+
+.root *,
+.root *::before,
+.root *::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.body {
+    & .body__header, .body__main, .body__footer {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+    }
+
+    & .body__header {
+        border-bottom: 2px solid $grey-6;
+    }
+
+    & .body__main {
+        & .main__container {
+            width: 100%;
+            max-width: 1600px;
+            justify-content: space-between;
+            padding: 0 60px;
+        }
+    }
+
+    & .body__footer {
+        background-color: $grey-0;
+    }
+}
