@@ -1,10 +1,10 @@
-import styles from ".style.module.scss";
+import styles from "./style.module.scss";
 
 const TagContainer = () => {
     return (
-        <div>
-            <div>0 KM</div>
-            <div>2019</div>
+        <div className={styles.tags_container}>
+            <div className={styles.tags_container__tag}>0 KM</div>
+            <div className={styles.tags_container__tag}>2019</div>
         </div>
     );
 };
