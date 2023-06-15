@@ -1,3 +1,10 @@
 .div {
-  background-color: red;
+  width: 90%;
+  max-width: 752px;
+  height: 355px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: $grey-10;
+  border-radius: 4px;
 }
