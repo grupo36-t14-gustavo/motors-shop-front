@@ -1,0 +1,12 @@
+.product {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    height: 100vh;
+    gap: 32px;
+
+    .title {
+        color: red($color: #000000);
+    }
+}

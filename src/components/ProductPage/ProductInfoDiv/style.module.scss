@@ -1,3 +1,57 @@
+@import "../../../styles/globals.module.scss";
+
 .div {
-  background-color: red;
+    background-color: $grey-10;
+    width: calc(90% - 20px);
+    max-width: 732px;
+    border-radius: 4px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    gap: 32px;
+    padding: 44px 20px;
+    font-family: $lexend;
+
+    .model {
+        font-size: 1.25rem;
+        font-weight: 600;
+        margin: 0;
+    }
+
+    .info {
+        display: flex;
+        flex-direction: column;
+        gap: 32px;
+        width: 100%;
+
+        .yearAndKm {
+            display: flex;
+            gap: 10px;
+
+            .roxo {
+                background-color: $brand4;
+                border-radius: 4px;
+                color: $brand1;
+                padding: 4px 8px;
+                font-size: 0.875rem;
+                font-weight: 500;
+                font-family: $inter;
+            }
+        }
+    }
+
+    button {
+        background-color: $brand2;
+        color: $white-fixed;
+        border: none;
+        border-radius: 4px;
+        padding: 12px 20px;
+    }
+}
+
+@media (min-width: 750px) {
+    .info {
+        flex-direction: row;
+    }
 }

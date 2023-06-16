@@ -1,3 +1,20 @@
+@import "../../../styles/globals.module.scss";
+
 .div {
-  background-color: red;
+    background-color: $grey-10;
+    border-radius: 4px;
+    width: calc(90% - 40px);
+    padding: 32px 20px;
+
+    h6 {
+        font-family: $lexend;
+        font-size: 1.25rem;
+        font-weight: 600;
+        margin: 0;
+    }
+
+    p {
+        font-family: $inter;
+        line-height: 28px;
+    }
 }

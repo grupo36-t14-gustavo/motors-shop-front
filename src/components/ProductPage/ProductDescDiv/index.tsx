@@ -1,7 +1,11 @@
-import styles from ".style.module.scss";
+import styles from "./style.module.scss";
 
-const Component = () => {
-    return <div className={styles.div}></div>;
+interface IComponent {
+    children: React.ReactNode;
+}
+
+const Component = ({ children }: IComponent) => {
+    return <div className={styles.div}>{children}</div>;
 };
 
 export default Component;
