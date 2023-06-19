@@ -1,3 +1,16 @@
-.div {
-  background-color: red;
+@import "../../../styles/globals.module.scss";
+
+.redirect, .redirect_auth_div {
+    width: 100%;
+    height: 48px;
+    border: 1.5px solid $grey-4;
+    background-color: $grey-10;
+    border-radius: 4px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.redirect_auth_div {
+    width: 130px;
 }
