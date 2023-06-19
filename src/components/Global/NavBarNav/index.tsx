@@ -1,4 +1,3 @@
-import styles from ".style.module.scss";
 import NavAuth from "../NavAuthDiv";
 
 const NavBar = () => {
