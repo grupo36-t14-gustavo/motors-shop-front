@@ -1,6 +1,10 @@
-import styles from ".style.module.scss";
+import styles from "./style.module.scss";
 
-const Component = () => {
+interface iProductImgProps {
+    children: React.ReactElement;
+}
+
+const Component = ({ children }: iProductImgProps) => {
     return <div className={styles.div}></div>;
 };
 
