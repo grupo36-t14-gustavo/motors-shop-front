@@ -1,10 +1,15 @@
 import styles from "./style.module.scss";
 
-const TagContainer = () => {
+interface iTagContainer {
+    year: number;
+    km: number;
+}
+
+const TagContainer = ({ year, km }: iTagContainer) => {
     return (
         <div className={styles.tags_container}>
-            <div className={styles.tags_container__tag}>0 KM</div>
-            <div className={styles.tags_container__tag}>2019</div>
+            <div className={styles.tags_container__tag}>{year}</div>
+            <div className={styles.tags_container__tag}>{km} KM</div>
         </div>
     );
 };

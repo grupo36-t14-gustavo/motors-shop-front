@@ -5,6 +5,8 @@
     justify-content: space-between;
     align-items: center;
     gap: 12px;
+    font-family: $inter;
+    font-weight: 500;
 
     & .tags_container__tag {
         width: 52px;
