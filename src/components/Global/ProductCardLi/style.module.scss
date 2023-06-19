@@ -1,0 +1,14 @@
+.product_card {
+    width: 310px;
+    height: 350px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 16px;
+
+    & .product_card__tag_price_div {
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+    }
+}

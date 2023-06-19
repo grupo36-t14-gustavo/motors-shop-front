@@ -1,0 +1,19 @@
+@import "../../../styles/globals.module.scss";
+
+.tags_container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 12px;
+
+    & .tags_container__tag {
+        width: 52px;
+        height: 32px;
+        background-color: $brand4;
+        color: $brand1;
+        border-radius: 4px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+}
