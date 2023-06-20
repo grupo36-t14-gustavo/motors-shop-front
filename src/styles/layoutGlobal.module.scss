@@ -9,6 +9,14 @@
 }
 
 .body {
+
+    & a {
+        text-decoration: none;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
     & .body__header, .body__main, .body__footer {
         width: 100%;
         display: flex;

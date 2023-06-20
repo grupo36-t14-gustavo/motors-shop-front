@@ -1,3 +1,8 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Lexend:wght@400;500;600;700&display=swap");
+
+$font-inter: "Inter", sans-serif;
+$font-lexend: "Lexend", sans-serif;
+
 /* Component type variables */
 $redirect-type: "base";
 $modal-type: "base";
@@ -51,104 +56,124 @@ $white-fixed: #ffffff;
 /* Text-size styles */
 
 /*heading*/
-.heading-1-700 {
+.heading_1_700 {
     font-size: 2.75rem;
     font-weight: 700;
+    font-family: $font-lexend;
 }
 
-.heading-2-600 {
+.heading_2_600 {
     font-size: 2.25rem;
     font-weight: 600;
+    font-family: $font-lexend;
 }
 
-.heading-3-600 {
+.heading_3_600 {
     font-size: 2rem;
     font-weight: 600;
+    font-family: $font-lexend;
 }
 
-.heading-3-500 {
+.heading_3_500 {
     font-size: 2rem;
     font-weight: 500;
+    font-family: $font-lexend;
 }
 
-.heading-4-600 {
+.heading_4_600 {
     font-size: 1.75rem;
     font-weight: 600;
+    font-family: $font-lexend;
 }
 
-.heading-1-700 {
+.heading_4_500 {
     font-size: 1.75rem;
     font-weight: 500;
+    font-family: $font-lexend;
 }
 
-.heading-5-600 {
+.heading_5_600 {
     font-size: 1.5rem;
     font-weight: 600;
+    font-family: $font-lexend;
 }
 
-.heading-5-500 {
+.heading_5_500 {
     font-size: 1.75rem;
     font-weight: 500;
+    font-family: $font-lexend;
 }
 
-.heading-6-600 {
+.heading_6_600 {
     font-size: 1.25rem;
     font-weight: 600;
+    font-family: $font-lexend;
 }
 
-.heading-6-500 {
+.heading_6_500 {
     font-size: 1.25rem;
     font-weight: 500;
+    font-family: $font-lexend;
 }
 
-.heading-7-600 {
+.heading_7_600 {
     font-size: 1rem;
     font-weight: 600;
+    font-family: $font-lexend;
 }
 
-.heading-7-600 {
+.heading_7_600 {
     font-size: 1rem;
     font-weight: 500;
+    font-family: $font-lexend;
 }
 
 /*inputs*/
-.buttons--input-label {
+.buttons_inputlabel__modify {
     font-size: 0.875rem;
     font-weight: 500;
+    font-family: $font-inter;
 }
 
-.buttons--input-placeholder {
+.button_input_placeholder__modify {
     font-size: 1rem;
     font-weight: 400;
+    font-family: $font-inter;
 }
 
-.buttons--button-medium-text {
+.button_medium_text__modify {
     font-size: 0.875rem;
     font-weight: 600;
+    font-family: $font-inter;
 }
 
-.buttons--button-big-text {
+.button_big_text__modify {
     font-size: 1rem;
     font-weight: 600;
+    font-family: $font-inter;
 }
 
 /*text-body*/
-.body-1-400 {
+.body_1_400 {
     font-size: 1rem;
     font-weight: 400;
+    font-family: $font-inter;
 }
 
-.body-1-600 {
+.body_1_600 {
     font-size: 1rem;
     font-weight: 600;
+    font-family: $font-inter;
 }
 
-.body-2-400 {
+.body_2_400 {
     font-size: 0.875rem;
     font-weight: 400;
+    font-family: $font-inter;
 }
 
-.body-2-500 {
+.body_2_500 {
     font-size: 0.875rem;
     font-weight: 500;
+    font-family: $font-inter;
 }
