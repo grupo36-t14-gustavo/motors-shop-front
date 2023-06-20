@@ -5,7 +5,7 @@ interface iProductImgProps {
 }
 
 const Component = ({ children }: iProductImgProps) => {
-    return <div className={styles.div}></div>;
+    return <div className={styles.div}>{children}</div>;
 };
 
 export default Component;

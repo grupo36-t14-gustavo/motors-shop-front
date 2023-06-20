@@ -1,3 +1,15 @@
+@import "../../../styles/globals.module.scss";
+
 .div {
-  background-color: red;
+    background-color: $grey-10;
+    border-radius: 4px;
+    width: 90%;
+    max-width: 752px;
+    height: 355px;
+    overflow: hidden;
+    text-align: center;
+
+    img {
+        max-width: 100%;
+    }
 }

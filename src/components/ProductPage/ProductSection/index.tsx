@@ -1,7 +1,8 @@
+import { ReactNode } from "react";
 import styles from "./style.module.scss";
 
 interface iProductSectionProps {
-    children: React.ReactElement;
+    children: ReactNode;
 }
 
 const Component = ({ children }: iProductSectionProps) => {
