@@ -1,7 +1,12 @@
-import styles from ".style.module.scss";
+import { ReactNode } from "react";
+import styles from "./style.module.scss";
 
-const Component = () => {
-    return <div className={styles.div}></div>;
+interface iProductSectionProps {
+    children: ReactNode;
+}
+
+const Component = ({ children }: iProductSectionProps) => {
+    return <div className={styles.div}>{children}</div>;
 };
 
 export default Component;

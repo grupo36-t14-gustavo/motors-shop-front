@@ -1,0 +1,21 @@
+@import "../../../styles/globals.module.scss";
+
+.background {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    z-index: -10;
+
+    .background__blue {
+        width: 100%;
+        background-color: $brand1;
+        height: 40%;
+    }
+
+    .background__grey {
+        width: 100%;
+        background-color: $grey-6;
+    }
+}
