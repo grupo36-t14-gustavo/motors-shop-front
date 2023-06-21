@@ -1,3 +1,5 @@
+@import "../../styles/globals.module.scss";
+
 .productsPage {
     width: 100vw;
     height: 100vh;
@@ -5,4 +7,40 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    gap: 24px;
+
+    .buy__button {
+        background-color: $brand1;
+        color: $white-fixed;
+        font-family: $inter;
+        font-size: 0.875rem;
+        font-weight: 600;
+        border-radius: 4px;
+        padding: 12px 20px;
+        border: none;
+    }
+
+    .price__div {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 24px;
+
+        .price {
+            font-family: $lexend;
+            font-weight: 500;
+            font-size: 1rem;
+        }
+    }
+}
+
+@media (min-width: 750px) {
+    .productsPage {
+        .price__div {
+            flex-direction: row;
+            align-items: center;
+            justify-content: space-between;
+        }
+    }
 }

@@ -1,3 +1,6 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Lexend:wght@400;500;600;700&display=swap");
+
 /* Component type variables */
 $redirect-type: "base";
 $modal-type: "base";
@@ -152,3 +155,7 @@ $white-fixed: #ffffff;
     font-size: 0.875rem;
     font-weight: 500;
 }
+
+/*fonts*/
+$lexend: "Lexend";
+$inter: "Inter";

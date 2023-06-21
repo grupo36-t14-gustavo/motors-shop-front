@@ -16,6 +16,18 @@
 
     .background__grey {
         width: 100%;
-        background-color: $grey-6;
+        background-color: $grey-7;
+        height: 60%;
+    }
+}
+
+@media (min-width: 750px) {
+    .background {
+        .background__blue {
+            height: 550px;
+        }
+        .background__grey {
+            height: calc(100% - 550px);
+        }
     }
 }
