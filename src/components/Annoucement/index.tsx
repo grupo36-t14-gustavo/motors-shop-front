@@ -1,3 +1,5 @@
+"user client";
+import Button from "../Global/Button";
 import Input from "../Global/Input";
 import Label from "../Global/Label";
 
@@ -18,19 +20,19 @@ export const Annoucement = () =>{
     return (
         <form onSubmit={handleSubmit}>
             <Label htmlFor="title"name="Titulo" />
-            <Input id="title" placeholder="Descreva seu anúncio"/>
+            <Input id="title" name="title" placeholder="Descreva seu anúncio"/>
             <Label htmlFor="brand" name="Marca"/>
-            <Input id="brand" placeholder="Ex:Kia"/>
+            <Input id="brand" name="brand" placeholder="Ex:Kia"/>
             <Label htmlFor="model" name="Modelo"/>
-            <Input id="model" placeholder="Ex: Soul"/>
+            <Input id="model" name="model" placeholder="Ex: Soul"/>
             <Label htmlFor="description" name="Descrição"/>
-            <Input id="description" placeholder="Faça uma descrição do seu veículo." />
+            <Input id="description"name="description" placeholder="Faça uma descrição do seu veículo." />
             <Label htmlFor="year" name="Ano"/>
-            <input type="number" id="year" placeholder="Ex:2012"/>
+            <input type="number" id="year" name="number" placeholder="Ex:2012"/>
             <Label htmlFor="km" name="km"/>
             <input type="number" id="km" placeholder="Ex:125"/>
             <Label htmlFor="color" name="Cor"/>
-            <Input id="color" placeholder=" Qual é a cor?"/>
+            <Input id="color" name="color" placeholder="Qual é a cor?"/>
             <Label htmlFor="fuelType" name="Tipo de combustível"/>
             <select name="Tipo de combustível" id="fuelType">
                 <option value="Gasolina">Gasolina</option>
@@ -41,7 +43,8 @@ export const Annoucement = () =>{
                 <option value="Hibrido">Híbrido</option>
             </select>
             <Label htmlFor="img" name="Foto"/>
-            <Input id="img" placeholder="envie o link da imagem." />
+            <Input id="img" name="img" placeholder="envie o link da imagem." />
+            <Button name="Cadastrar"/>
         </form>
     );
 

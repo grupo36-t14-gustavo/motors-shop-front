@@ -8,7 +8,7 @@ const NavAuth = () => {
     return (
         <div className={styles.nav_bar__auth_div}>
             {/* If User not signed: */}
-            <a className={styles.auth_div__login_redirect} href="">
+            <a className={styles.auth_div__login_redirect} href="/login">
                 Fazer Login
             </a>
             <RegisterRedirect type="nav" />

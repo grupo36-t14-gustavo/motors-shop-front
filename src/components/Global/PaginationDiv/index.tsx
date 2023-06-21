@@ -1,4 +1,3 @@
-import styles from ".style.module.scss";
 
 const Pagination = () => {
     return (
