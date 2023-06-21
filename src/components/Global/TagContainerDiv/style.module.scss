@@ -1,4 +1,4 @@
-@import "../../../styles/globals.module.scss";
+@import "../../../styles/globalVariables.module.scss";
 
 .tags_container {
     display: flex;
@@ -15,5 +15,6 @@
         display: flex;
         justify-content: center;
         align-items: center;
+        font-family: $font-inter;
     }
 }

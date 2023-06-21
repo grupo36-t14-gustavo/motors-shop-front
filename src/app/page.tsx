@@ -1,10 +1,10 @@
-import styles from "../styles/layoutGlobal.module.scss";
 import NavBar from "@/components/Global/NavBarNav";
+import Pagination from "@/components/Global/PaginationDiv";
+import ProductList from "@/components/Global/ProductListUl";
+import RightsContainer from "@/components/Global/RightsContainerDiv";
 import Banner from "@/components/Home/BannerSection";
 import FilterTab from "@/components/Home/FilterTabAside";
-import ProductList from "@/components/Global/ProductListUl";
-import Pagination from "@/components/Global/PaginationDiv";
-import RightsContainer from "@/components/Global/RightsContainerDiv";
+import styles from "../styles/layoutGlobal.module.scss";
 
 export default function Home() {
     return (
@@ -12,6 +12,7 @@ export default function Home() {
             <header className={styles.body__header}>
                 <NavBar />
             </header>
+
             <main className={styles.body__main}>
                 <div className={styles.main__container}>
                     <Banner />
@@ -23,6 +24,7 @@ export default function Home() {
                     <Pagination />
                 </div>
             </main>
+
             <footer className={styles.body__footer}>
                 <RightsContainer />
             </footer>

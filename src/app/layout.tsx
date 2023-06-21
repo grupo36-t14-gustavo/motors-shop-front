@@ -1,7 +1,4 @@
 import styles from "../styles/layoutGlobal.module.scss";
-import { Inter } from "next/font/google";
-
-const inter = Inter({ subsets: ["latin"] });
 
 export const metadata = {
     title: "MotorsShop - Home",
@@ -15,7 +12,7 @@ export default function RootLayout({
 }) {
     return (
         <html lang="en" className={styles.root}>
-            <body className={(inter.className, styles.body)}>{children}</body>
+            <body className={styles.body}>{children}</body>
         </html>
     );
 }

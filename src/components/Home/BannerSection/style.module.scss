@@ -1,14 +1,19 @@
 .div {
-  width: 100%;
-  height: 625.33px;
-  background: linear-gradient(180deg, rgba(0, 0, 0, 0.29), 0%, #00000000 100%);
-  position: fixed;
-  font-family: $Lexend;
-  z-index: -1;
+    width: 100%;
+    height: 625.33px;
+    background: linear-gradient(
+        180deg,
+        rgba(0, 0, 0, 0.29),
+        0%,
+        #00000000 100%
+    );
+    position: fixed;
+    font-family: $Lexend;
+    z-index: -1;
 }
 
 @media (min-width: 700px) {
-  .div {
-    height: 537.41px;
-  }
+    .div {
+        height: 537.41px;
+    }
 }
