@@ -5,11 +5,13 @@
     height: 48px;
     border: 1.5px solid $grey-4;
     background-color: $grey-10;
+    color: $grey-0;
     border-radius: 4px;
     display: flex;
     justify-content: center;
     align-items: center;
-    text-decoration: none;
+    font-family: $font-inter;
+    font-weight: 600;
 }
 
 .redirect_auth_div {

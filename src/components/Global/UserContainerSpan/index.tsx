@@ -1,9 +1,10 @@
-import styles from ".style.module.scss";
+import styles from "./style.module.scss";
+import globalStyles from "../../../styles/globals.module.scss";
 import UserAvatar from "../UserAvatarDiv";
 
 const UserContainer = () => {
     return (
-        <div>
+        <div className={`${styles.user_container} ${globalStyles.body_2_500}`}>
             <UserAvatar></UserAvatar>
             <span>Evelin Camila</span>
         </div>

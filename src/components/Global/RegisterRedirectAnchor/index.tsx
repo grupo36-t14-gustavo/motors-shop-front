@@ -1,17 +1,18 @@
+import Link from "next/link";
 import styles from "./style.module.scss";
 
 const RegisterRedirect = ({ type }: { type?: string }) => {
     return type === "nav" ? (
-        <a
+        <Link
             className={styles.redirect_auth_div}
-            href=""
+            href="/register"
         >
             Cadastrar
-        </a>
+        </Link>
     ) : (
-        <a className={styles.redirect} href="">
+        <Link className={styles.redirect} href="/register">
             Cadastrar
-        </a>
+        </Link>
     );
 };
 
