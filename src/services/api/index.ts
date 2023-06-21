@@ -1,4 +1,4 @@
-import axios, { Axios, AxiosError } from "axios";
+import axios, { AxiosError } from "axios";
 
 const motorshopApi = axios.create({
     baseURL: "http://localhost:3001/",

@@ -1,7 +1,5 @@
-
 import { ReactNode } from "react";
 import styles from "./style.module.scss";
-
 
 const BaseModal = ({ children }: { children: ReactNode }) => {
     return (

@@ -3,10 +3,7 @@ import styles from "./style.module.scss";
 
 const RegisterRedirect = ({ type }: { type?: string }) => {
     return type === "nav" ? (
-        <Link
-            className={styles.redirect_auth_div}
-            href="/register"
-        >
+        <Link className={styles.redirect_auth_div} href="/register">
             Cadastrar
         </Link>
     ) : (

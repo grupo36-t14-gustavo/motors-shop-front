@@ -1,17 +1,18 @@
 import PropTypes from "prop-types";
 import styles from "./style.module.scss";
-type LabelProps ={
-  htmlFor:string;
-  name: string;
-}
-const Label:React.FC<LabelProps> = ({htmlFor, name}) =>{
+type LabelProps = {
+    htmlFor: string;
+    name: string;
+};
+const Label: React.FC<LabelProps> = ({ htmlFor, name }) => {
     return (
-        <label  htmlFor={htmlFor} className={styles.label} >{name} </label>
-    
+        <label htmlFor={htmlFor} className={styles.label}>
+            {name}{" "}
+        </label>
     );
 };
 
-Label.propTypes ={
+Label.propTypes = {
     name: PropTypes.string.isRequired,
     htmlFor: PropTypes.string.isRequired,
 };

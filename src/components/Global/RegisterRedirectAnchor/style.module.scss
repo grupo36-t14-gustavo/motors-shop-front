@@ -1,6 +1,7 @@
 @import "../../../styles/globals.module.scss";
 
-.redirect, .redirect_auth_div {
+.redirect,
+.redirect_auth_div {
     width: 150px;
     height: 48px;
     border: 1.5px solid $grey-4;

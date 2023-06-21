@@ -1,4 +1,3 @@
-
 import styles from "../styles/layoutGlobal.module.scss";
 
 export const metadata = {

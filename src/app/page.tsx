@@ -12,7 +12,7 @@ export default function Home() {
             <header className={styles.body__header}>
                 <NavBar />
             </header>
-          
+
             <main className={styles.body__main}>
                 <div className={styles.main__container}>
                     <Banner />
@@ -24,7 +24,7 @@ export default function Home() {
                     <Pagination />
                 </div>
             </main>
-            
+
             <footer className={styles.body__footer}>
                 <RightsContainer />
             </footer>

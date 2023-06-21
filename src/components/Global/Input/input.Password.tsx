@@ -1,20 +1,25 @@
 import PropTypes from "prop-types";
 import styles from "./style.module.scss";
-type InputProps ={
-id: string;
-placeholder?: string;
-name:string;
+type InputProps = {
+    id: string;
+    placeholder?: string;
+    name: string;
 };
-const InputPassword:React.FC<InputProps> = ({ id, placeholder, name }) => {
-
-    return(
+const InputPassword: React.FC<InputProps> = ({ id, placeholder, name }) => {
+    return (
         <div>
-            <input type="password" id ={id} placeholder={placeholder} className={styles.input} name={name} />
+            <input
+                type="password"
+                id={id}
+                placeholder={placeholder}
+                className={styles.input}
+                name={name}
+            />
         </div>
     );
 };
 
-InputPassword.propTypes ={
+InputPassword.propTypes = {
     id: PropTypes.string.isRequired,
     placeholder: PropTypes.string,
     name: PropTypes.string.isRequired,

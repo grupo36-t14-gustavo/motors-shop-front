@@ -10,7 +10,6 @@ const SlideMenuMobile = () => {
             <NavUserSlideMenu />
 
             {/* If menu type IS filter */}
-            
         </div>
     );
 };

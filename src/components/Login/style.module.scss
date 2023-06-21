@@ -1,62 +1,60 @@
-@import"../../styles//globals.module.scss";
+@import "../../styles//globals.module.scss";
 .form {
-  display: flex;
-  flex-direction: column;
-  width: 316px;
-  gap: 11px;
-  
+    display: flex;
+    flex-direction: column;
+    width: 316px;
+    gap: 11px;
 }
-.container_form{
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: flex-start;
-  gap: 3px;
-  align-items: center;
-  width: 400px;
-  background: $white-fixed;
-  height: 370px;
-  margin: 0 auto;
-
+.container_form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 3px;
+    align-items: center;
+    width: 400px;
+    background: $white-fixed;
+    height: 370px;
+    margin: 0 auto;
 }
-.span_tittle_form_login{
-  display: flex;
+.span_tittle_form_login {
+    display: flex;
     align-items: center;
     justify-content: center;
     width: 307px;
 }
-.title_login_form{
-  font-family: "Lexend", sans-serif;
-  font-weight: 500;
-  font-size: 24px;
-  line-height: 30px;
+.title_login_form {
+    font-family: "Lexend", sans-serif;
+    font-weight: 500;
+    font-size: 24px;
+    line-height: 30px;
 }
-.button_register{
+.button_register {
     height: 48px;
     width: 315px;
     left: 48px;
     top: 330px;
     border-radius: 4px;
     padding: 12px 28px 12px 28px;
-    background-color:$white-fixed;
+    background-color: $white-fixed;
     font-family: "Inter", sans-serif;
     font-style: normal;
     font-weight: 600;
     font-size: 20px;
     line-height: 0px;
-    color:$grey-0 ;
+    color: $grey-0;
 }
-.tag_link{
-  text-decoration: none;
-  font-family: "Inter", sans-serif;
-  font-weight: 600;
-  font-size: 18px;
-  color:$grey-0;
+.tag_link {
+    text-decoration: none;
+    font-family: "Inter", sans-serif;
+    font-weight: 600;
+    font-size: 18px;
+    color: $grey-0;
 }
-.tag_link_register{
-  font-family: "Inter", sans-serif;
-  font-weight: 500;
-  font-size: 16px;
-  line-height: 24px;
-  color:$grey-2;
+.tag_link_register {
+    font-family: "Inter", sans-serif;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 24px;
+    color: $grey-2;
 }
