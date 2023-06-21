@@ -1,9 +1,8 @@
-@import "../../../styles/globals.module.scss";
+@import "../../../styles/globalVariables.module.scss";
 
 .user_container {
     max-width: 130px;
     height: 32px;
-    font-family: $font-inter;
     display: flex;
     justify-content: space-between;
     align-items: center;

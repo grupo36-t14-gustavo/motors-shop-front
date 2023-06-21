@@ -1,4 +1,4 @@
-@import "../../../styles/globals.module.scss";
+@import "../../../styles/globalVariables.module.scss";
 
 .product_card {
     width: 310px;
@@ -8,16 +8,7 @@
     justify-content: space-between;
     gap: 16px;
 
-    & .product_card__heading {
-        font-family: $font-lexend;
-        font-weight: 600;
-        font-size: 1rem;
-    }
-
     & .product_card__description {
-        font-family: $font-inter;
-        font-weight: 400;
-        font-size: 0.875rem;
         line-height: 24px;
     }
 
@@ -25,10 +16,5 @@
         width: 100%;
         display: flex;
         justify-content: space-between;
-
-        & .tag_price_div__price_span {
-            font-family: $font-lexend;
-            font-weight: 500;
-        }
     }
 }

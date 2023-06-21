@@ -1,5 +1,5 @@
 import styles from "./style.module.scss";
-import globalStyles from "../../../styles/globals.module.scss";
+import globalStyles from "../../../styles/globalVariables.module.scss";
 
 const TagContainer = () => {
     return (
