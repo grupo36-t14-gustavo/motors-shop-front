@@ -1,8 +1,8 @@
 import axios, { AxiosError } from "axios";
 
 const motorshopApi = axios.create({
-    baseURL: "https://motorshop-api-x9lm.onrender.com/",
-    timeout: 2000,
+    baseURL: "http://localhost:3001/",
+    timeout: 20000,
 });
 
 export interface iErrorMessage {
@@ -10,7 +10,9 @@ export interface iErrorMessage {
 }
 
 export const returnAxiosError = async (error: unknown) => {
-    throw error as AxiosError<iErrorMessage>;
+    if (error instanceof AxiosError) {
+        throw error;
+    }
 };
 
 export default motorshopApi;

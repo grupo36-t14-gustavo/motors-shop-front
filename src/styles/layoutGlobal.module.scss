@@ -1,4 +1,4 @@
-@import "../styles/globals.module.scss";
+@import "./globalVariables.module.scss";
 
 .root *,
 .root *::before,
@@ -9,7 +9,16 @@
 }
 
 .body {
-    & .body__header, .body__main, .body__footer {
+    & a {
+        text-decoration: none;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    & .body__header,
+    .body__main,
+    .body__footer {
         width: 100%;
         display: flex;
         justify-content: center;

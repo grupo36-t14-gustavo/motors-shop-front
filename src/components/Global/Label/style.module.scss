@@ -1,0 +1,13 @@
+@import "../../../styles/globalVariables.module.scss";
+
+.label {
+    font-family: "Inter", sans-serif;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 17px;
+    color: $grey-0;
+}
+
+@media (max-width: 767px) {
+}

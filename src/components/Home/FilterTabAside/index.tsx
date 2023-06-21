@@ -7,7 +7,6 @@ const FilterTab = () => {
             <FilterList />
 
             {/* Button to clean filters: */}
-            
         </aside>
     );
 };

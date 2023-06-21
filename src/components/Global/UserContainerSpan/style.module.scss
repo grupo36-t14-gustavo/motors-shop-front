@@ -1,3 +1,9 @@
-.div {
-  background-color: red;
+@import "../../../styles/globalVariables.module.scss";
+
+.user_container {
+    max-width: 130px;
+    height: 32px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }

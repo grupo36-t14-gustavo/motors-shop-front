@@ -1,3 +1,5 @@
+@import "../../../styles/globalVariables.module.scss";
+
 .product_card {
     width: 310px;
     height: 350px;
@@ -5,6 +7,10 @@
     flex-direction: column;
     justify-content: space-between;
     gap: 16px;
+
+    & .product_card__description {
+        line-height: 24px;
+    }
 
     & .product_card__tag_price_div {
         width: 100%;

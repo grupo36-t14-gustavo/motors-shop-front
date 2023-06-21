@@ -1,12 +1,15 @@
-@import "../../../styles/globals.module.scss";
+@import "../../../styles/globalVariables.module.scss";
 
 .nav_bar__auth_div {
     padding-left: 44px;
     display: flex;
     justify-content: space-between;
     border-left: 2px solid $grey-6;
+    gap: 45px;
 
     & .auth_div__login_redirect {
-        color: $brand1;
+        color: $grey-2;
+        font-family: $font-inter;
+        font-weight: 600;
     }
 }
