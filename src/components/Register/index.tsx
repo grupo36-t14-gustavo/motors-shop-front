@@ -60,11 +60,7 @@ const FormRegister = () =>{
         // tratar o erro com o toast 
         }
     };
-  
 
-
-    
-    
     return(
         <div className={styles.container_form}>
             <div className={styles.style_div_form} >
@@ -114,8 +110,8 @@ const FormRegister = () =>{
                     </span>
                     <p className= {styles.p_title_for_type_user}>Tipo de úsuario</p>
                     <span className={styles.span_for_type_user} >
-                        <input className={`${styles.button_for_type_user} ${userType === true ? styles.active_button : ""}`} type="button" value="Vendedor" id="button_clicked" onClick={() => setUserType(true)} />
-                        <input className={`${styles.button_for_type_user} ${userType === false ? styles.active_button : ""}`} type="button" value="Comprador" id="button_clicked" onClick={() => setUserType(false)} />
+                        <input className={`${styles.button_for_type_user} ${userType === true ? styles.button_for_type_user_active : ""}`} type="button" value="Vendedor" id="button_clicked" onClick={() => setUserType(true)} />
+                        <input className={`${styles.button_for_type_user} ${userType === false ? styles.button_for_type_user_active : ""}`} type="button" value="Comprador" id="button_clicked" onClick={() => setUserType(false)} />
       
                     </span>
             

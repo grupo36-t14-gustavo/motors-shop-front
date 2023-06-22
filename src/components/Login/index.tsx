@@ -1,4 +1,5 @@
 "use client";
+import { userLoginRoute } from "@/services/api/User";
 import Link from "next/link";
 import React from "react";
 import { z } from "zod";
@@ -14,16 +15,17 @@ const schemaLogin = z.object({
 
 const LoginForm = () =>{
 
-    const handleSubmit = (event: React.FormEvent<HTMLFormElement>) =>{
+    const handleSubmit =async (event: React.FormEvent<HTMLFormElement>) =>{
         const formData = new FormData(event.currentTarget);
         const data = {
             email: formData.get("emailInput"),
             password: formData.get("passwordInput")
         };
+     
         try {
             schemaLogin.parse(data);
             //colocar um tost pra indicar o usuario
-            //colocar a requisição login
+            await userLoginRoute(data);
         } catch (error) {
             //tratar o erro com o toast 
         }

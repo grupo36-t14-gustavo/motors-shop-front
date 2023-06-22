@@ -4,6 +4,7 @@ type InputProps ={
 id: string;
 placeholder?: string;
 name: string;
+
 };
 const Input:React.FC<InputProps> = ({ id, placeholder, name }) => {
 
