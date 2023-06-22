@@ -1,7 +1,11 @@
-import styles from ".style.module.scss";
+import styles from "./style.module.scss";
 
-const Component = () => {
-    return <div className={styles.div}></div>;
+interface iProductDescDiv {
+    children: React.ReactNode;
+}
+
+const Component = ({ children }: iProductDescDiv) => {
+    return <div className={styles.div}>{children}</div>;
 };
 
 export default Component;

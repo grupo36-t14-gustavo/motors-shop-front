@@ -1,3 +1,11 @@
+@import "../../../styles/globalVariables.module.scss";
+
 .div {
-  background-color: red;
+    background-color: $grey-10;
+    width: 100%;
+    padding: 28px;
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+    border-radius: 4px;
 }
