@@ -4,8 +4,8 @@ interface iProductInfoDivProps {
     children: React.ReactElement;
 }
 
-const Component = ({ children }: iProductInfoDivProps) => {
+const ProductInfoDiv = ({ children }: iProductInfoDivProps) => {
     return <div className={styles.div}>{children}</div>;
 };
 
-export default Component;
+export default ProductInfoDiv;

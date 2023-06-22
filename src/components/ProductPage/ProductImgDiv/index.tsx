@@ -4,8 +4,8 @@ interface iProductImgProps {
     children: React.ReactElement;
 }
 
-const Component = ({ children }: iProductImgProps) => {
+const ProductImgDiv = ({ children }: iProductImgProps) => {
     return <div className={styles.div}>{children}</div>;
 };
 
-export default Component;
+export default ProductImgDiv;

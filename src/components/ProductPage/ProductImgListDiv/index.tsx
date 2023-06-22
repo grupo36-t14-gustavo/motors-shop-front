@@ -1,7 +1,11 @@
-import styles from ".style.module.scss";
+import styles from "./style.module.scss";
 
-const Component = () => {
-    return <div className={styles.div}></div>;
+interface iProductImgListDivProps {
+    children: React.ReactElement;
+}
+
+const ProductImgListDiv = ({ children }: iProductImgListDivProps) => {
+    return <div className={styles.div}>{children}</div>;
 };
 
-export default Component;
+export default ProductImgListDiv;
