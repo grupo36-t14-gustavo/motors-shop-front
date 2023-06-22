@@ -1,4 +1,5 @@
-@import "../../styles/globals.module.scss";
+@import "../../styles/globalFonts.module.scss";
+@import "../../styles/globalVariables.module.scss";
 
 .productsPage {
     width: 100vw;
@@ -12,7 +13,7 @@
     .buy__button {
         background-color: $brand1;
         color: $white-fixed;
-        font-family: $inter;
+        font-family: $font-inter;
         font-size: 0.875rem;
         font-weight: 600;
         border-radius: 4px;
@@ -28,7 +29,7 @@
         gap: 24px;
 
         .price {
-            font-family: $lexend;
+            font-family: $font-lexend;
             font-weight: 500;
             font-size: 1rem;
         }

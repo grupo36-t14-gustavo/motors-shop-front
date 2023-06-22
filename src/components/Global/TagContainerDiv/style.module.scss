@@ -1,11 +1,12 @@
 @import "../../../styles/globalVariables.module.scss";
+@import "../../../styles//globalFonts.module.scss";
 
 .tags_container {
     display: flex;
     justify-content: space-between;
     align-items: center;
     gap: 12px;
-    font-family: $inter;
+    font-family: $font-inter;
 
     & .tags_container__tag {
         width: 52px;
