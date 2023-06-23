@@ -1,12 +1,12 @@
 import { ReactNode } from "react";
 import styles from "./style.module.scss";
 
-interface iProductSectionProps {
+interface iPhotosAndProfileSectionProps {
     children: ReactNode;
 }
 
-const ProductSection = ({ children }: iProductSectionProps) => {
+const PhotosAndProfileSection = ({ children }: iPhotosAndProfileSectionProps) => {
     return <div className={styles.div}>{children}</div>;
 };
 
-export default ProductSection;
+export default PhotosAndProfileSection;

@@ -1,8 +1,31 @@
 .productsPage {
     width: 100vw;
-    height: 100vh;
+    height: 100%;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    margin-top: 100px;
+
+    @media (min-width: 610px) {
+        margin-top: 130px;
+    }
+
+    @supports (display: grid) {
+        @media (min-width: 758px) {
+          margin-top: 150px;
+          display: grid;
+          grid-template-columns: 1fr 1fr;
+          gap: 20px;
+
+          .ProductSection,
+          .PhotosAndProfileSection {
+            flex: unset;
+          }
+        }
+      }
+
+    @media (min-height: 800px) and ( min-width: 1000px) {
+        margin-top: 180px;
+    }
 }
