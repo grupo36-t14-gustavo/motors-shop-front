@@ -1,4 +1,8 @@
 .product_list {
     width: 100%;
     max-width: 1080px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 85px 48px;
 }
