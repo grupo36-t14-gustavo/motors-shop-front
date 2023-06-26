@@ -1,22 +1,22 @@
-@import "../../../styles/globals.module.scss";
+@import "../../../styles/globalVariables.module.scss";
 
 .div {
-  background-color: $grey-10;
-  width: 100%;
-  border-radius: .25rem;
-  border: none;
-  max-width: 47.5rem;
-  margin-top: .625rem;
-  padding: 1.875rem;
+    background-color: $grey-10;
+    width: 100%;
+    border-radius: 0.25rem;
+    border: none;
+    max-width: 47.5rem;
+    margin-top: 0.625rem;
+    padding: 1.875rem;
 
-  div > h3 {
-    display: flex;
-    justify-content: flex-start;
-    color: $grey-1;
-    margin-bottom: 1.25rem;
-}
+    div > h3 {
+        display: flex;
+        justify-content: flex-start;
+        color: $grey-1;
+        margin-bottom: 1.25rem;
+    }
 
-  p {
-    color: $grey-2;
-  }
+    p {
+        color: $grey-2;
+    }
 }
