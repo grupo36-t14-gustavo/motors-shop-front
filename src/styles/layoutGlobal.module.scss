@@ -1,8 +1,6 @@
 @import "./globalVariables.module.scss";
 
-.root *,
-.root *::before,
-.root *::after {
+.root * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
@@ -29,15 +27,23 @@
     }
 
     & .body__main {
+        margin-top: 50px;
+    
         & .main__container {
             width: 100%;
             max-width: 1600px;
-            justify-content: space-between;
-            padding: 0 60px;
+            justify-content: center;
+
+            & .container__main_section {
+                display: flex;
+                justify-content: space-between;
+            }
         }
     }
 
     & .body__footer {
         background-color: $grey-0;
     }
+
+
 }

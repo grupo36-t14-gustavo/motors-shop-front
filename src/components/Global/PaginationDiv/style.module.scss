@@ -1,3 +1,23 @@
-.div {
-  background-color: red;
-}
+@import "../../../styles/globalVariables.module.scss";
+
+.pagination_container {
+    // padding: 80px 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+
+    & .pagination_container__colored {
+        display: inline-block;
+        color: $brand2;
+    }
+
+    & .pagination_container__quantity {
+      color: $grey-4;
+
+    }
+
+    & .quantity__grey_modify {
+      color: $grey-3;
+    }
+  }
