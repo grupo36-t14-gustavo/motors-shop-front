@@ -1,7 +1,7 @@
 "user client";
-import Button from "../Global/Button";
-import Input from "../Global/Input";
-import Label from "../Global/Label";
+import Button from "../Button";
+import BaseInput from "../BaseInput";
+import Label from "../Label";
 
 export const Annoucement = () => {
     const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
@@ -17,13 +17,17 @@ export const Annoucement = () => {
     return (
         <form onSubmit={handleSubmit}>
             <Label htmlFor="title" name="Titulo" />
-            <Input id="title" name="title" placeholder="Descreva seu anúncio" />
+            <BaseInput
+                id="title"
+                name="title"
+                placeholder="Descreva seu anúncio"
+            />
             <Label htmlFor="brand" name="Marca" />
-            <Input id="brand" name="brand" placeholder="Ex:Kia" />
+            <BaseInput id="brand" name="brand" placeholder="Ex:Kia" />
             <Label htmlFor="model" name="Modelo" />
-            <Input id="model" name="model" placeholder="Ex: Soul" />
+            <BaseInput id="model" name="model" placeholder="Ex: Soul" />
             <Label htmlFor="description" name="Descrição" />
-            <Input
+            <BaseInput
                 id="description"
                 name="description"
                 placeholder="Faça uma descrição do seu veículo."
@@ -38,7 +42,7 @@ export const Annoucement = () => {
             <Label htmlFor="km" name="km" />
             <input type="number" id="km" placeholder="Ex:125" />
             <Label htmlFor="color" name="Cor" />
-            <Input id="color" name="color" placeholder="Qual é a cor?" />
+            <BaseInput id="color" name="color" placeholder="Qual é a cor?" />
             <Label htmlFor="fuelType" name="Tipo de combustível" />
             <select name="Tipo de combustível" id="fuelType">
                 <option value="Gasolina">Gasolina</option>
@@ -49,7 +53,11 @@ export const Annoucement = () => {
                 <option value="Hibrido">Híbrido</option>
             </select>
             <Label htmlFor="img" name="Foto" />
-            <Input id="img" name="img" placeholder="envie o link da imagem." />
+            <BaseInput
+                id="img"
+                name="img"
+                placeholder="envie o link da imagem."
+            />
             <Button name="Cadastrar" />
         </form>
     );
