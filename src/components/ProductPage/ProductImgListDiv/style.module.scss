@@ -1,17 +1,14 @@
-@import "../../../styles/globals.module.scss";
+@import "../../../styles/globalVariables.module.scss";
 
 .div {
-  background-color: $grey-10;
-  padding: 1.25rem;
-  display: flex;
-  flex-wrap: wrap;
+    background-color: $grey-10;
+    padding: 1.25rem;
+    display: flex;
+    flex-wrap: wrap;
 
-
-
-
-  img {
-    margin: 10px 0;
-    width: 33.33%;
-    padding: 8px;
-  }
+    img {
+        margin: 10px 0;
+        width: 33.33%;
+        padding: 8px;
+    }
 }

@@ -1,7 +1,7 @@
 import styles from "./style.module.scss";
 
 interface iProductInfoDivProps {
-    children: React.ReactElement;
+    children: React.ReactNode;
 }
 
 const ProductInfoDiv = ({ children }: iProductInfoDivProps) => {

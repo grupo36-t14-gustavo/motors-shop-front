@@ -1,8 +1,8 @@
-@import "../../../styles/globals.module.scss";
+@import "../../../styles/globalVariables.module.scss";
 
 .div {
     background-color: $grey-10;
-    border-radius: .25rem;
+    border-radius: 0.25rem;
     width: 100%;
     max-width: 47rem;
     max-height: 47rem;

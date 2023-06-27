@@ -1,14 +1,14 @@
-@import "../../../styles/globals.module.scss";
+@import "../../../styles/globalFonts.module.scss";
+@import "../../../styles/globalVariables.module.scss";
 
 .div {
     background-color: $grey-10;
     width: 100%;
-    border-radius: .25rem;
+    border-radius: 0.25rem;
     border: none;
     max-width: 47.5rem;
     margin-top: 10px;
     padding: 1.875rem;
-
 
     div > h3 {
         display: flex;
@@ -33,19 +33,18 @@
         margin: 20px 0 20px 0;
     }
 
-    button{
+    button {
         background-color: $brand1;
         color: $white-fixed;
-        border-radius: .25rem;
+        border-radius: 0.25rem;
         border: none;
         padding: 10px;
         width: 90px;
         margin: 20px 0 20px 0;
     }
 
-
     @media (min-width: 700px) {
-        :nth-child(2){
+        :nth-child(2) {
             display: flex;
             justify-content: space-between;
             align-items: center;
@@ -54,6 +53,5 @@
         div > div > div {
             gap: 20%;
         }
-
     }
 }
