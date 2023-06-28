@@ -5,7 +5,8 @@ export default function Register() {
     return (
         <>
             <NavBar />
-            <FormRegister />
+            <FormRegister/>
+        
         </>
     );
 }

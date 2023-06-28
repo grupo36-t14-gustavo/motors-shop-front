@@ -7,23 +7,27 @@ import Input from "../Global/Input/index";
 import InputPassword from "../Global/Input/input.Password";
 import Label from "../Global/Label/index";
 import styles from "./style.module.scss";
+import { userLoginRoute } from "@/services/api/User";
+
 const schemaLogin = z.object({
     email: z.string().email(),
     password: z.string(),
 });
 
 const LoginForm = () => {
-    const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
+    
+    const handleSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
         const formData = new FormData(event.currentTarget);
         const data = {
-            email: formData.get("emailInput"),
-            password: formData.get("passwordInput"),
+            email: formData.get("emailInput") as string,
+            password: formData.get("passwordInput") as string,
         };
         try {
             schemaLogin.parse(data);
-            //colocar um tost pra indicar o usuario
-            //colocar a requisição login
+            await userLoginRoute(data)
+          
         } catch (error) {
+            alert(error)
             //tratar o erro com o toast
         }
     };
