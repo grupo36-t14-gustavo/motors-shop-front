@@ -2,13 +2,14 @@
 
 .header__nav_bar {
     width: 100%;
+    max-width: 1600px;
     height: 80px;
     padding: 0 60px;
     display: flex;
     justify-content: space-between;
     align-items: center;
     background-color: $grey-10;
-    position: fixed;
-    top: 0;
-    left: 0;
+    // position: fixed;
+    // top: 0;
+    // left: 0;
 }
