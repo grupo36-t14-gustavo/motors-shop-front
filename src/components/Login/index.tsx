@@ -1,6 +1,6 @@
 "use client";
 import Link from "next/link";
-import React, { useEffect, useState } from "react";
+import React from "react";
 import { z } from "zod";
 import Button from "../Global/Button";
 import Input from "../Global/Input/index";
@@ -9,7 +9,7 @@ import Label from "../Global/Label/index";
 import styles from "./style.module.scss";
 import { userLoginRoute } from "@/services/api/User";
 import { ToastContainer, toast } from "react-toastify";
-import Router from "next/router";
+import "react-toastify/dist/ReactToastify.css";
 
 const schemaLogin = z.object({
     email: z.string().email(),
@@ -17,14 +17,6 @@ const schemaLogin = z.object({
 });
 
 const LoginForm = () => {
-    const [token, setToken] = useState("");
-
-    // useEffect(() => {
-    //     if (token !== "") {
-    //         Router.push("/product");
-    //     }
-    // }, [token]);
-
     const handleSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
         event.preventDefault();
         const formData = new FormData(event.currentTarget);
@@ -33,15 +25,16 @@ const LoginForm = () => {
             password: formData.get("passwordInput"),
         };
         try {
+            const delay = 2000;
             const payload = schemaLogin.parse(data);
-            //colocar um tost pra indicar o usuario
-            //colocar a requisição login
             const token = await userLoginRoute(payload);
-            setToken(token!.token);
-            location.pathname = "/product";
-            // toast.success("Sucesso");
+            localStorage.setItem("token", token!.token);
+            setTimeout(() => {
+                location.pathname = "/product";
+            }, delay);
+            toast.success("Sucesso");
         } catch (error) {
-            // toast.error("Verifique se os dados estão corretos");
+            toast.error("Verifique se os dados estão corretos");
         }
     };
 
@@ -76,8 +69,8 @@ const LoginForm = () => {
             </div>
             <ToastContainer
                 position="top-right"
-                autoClose={2000}
-                hideProgressBar={true}
+                autoClose={1500}
+                hideProgressBar={false}
                 closeOnClick
                 theme="light"
             />
