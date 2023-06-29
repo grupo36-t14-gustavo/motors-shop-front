@@ -1,13 +1,16 @@
 "use client";
 import Link from "next/link";
 import React from "react";
-import { string, z } from "zod";
+import { z } from "zod";
 import Button from "../Global/Button";
 import Input from "../Global/Input/index";
 import InputPassword from "../Global/Input/input.Password";
 import Label from "../Global/Label/index";
 import styles from "./style.module.scss";
 import { userLoginRoute } from "@/services/api/User";
+import { ToastContainer, toast } from "react-toastify";
+import Router from "next/router";
+
 const schemaLogin = z.object({
     email: z.string().email(),
     password: z.string(),
@@ -26,9 +29,12 @@ const LoginForm = () => {
             //colocar um tost pra indicar o usuario
             //colocar a requisição login
             const token = await userLoginRoute(payload);
-            localStorage.setItem("token", token.token);
+            localStorage.setItem("token", token!.token);
+            console.log("teste");
+            // toast.success("Sucesso");
+            Router.push("/product");
         } catch (error) {
-            //tratar o erro com o toast
+            // toast.error("Verifique se os dados estão corretos");
         }
     };
 
@@ -61,6 +67,13 @@ const LoginForm = () => {
                     </button>
                 </form>
             </div>
+            <ToastContainer
+                position="top-right"
+                autoClose={2000}
+                hideProgressBar={true}
+                closeOnClick
+                theme="light"
+            />
         </>
     );
 };
