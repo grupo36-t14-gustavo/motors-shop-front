@@ -1,13 +1,22 @@
+import styles from "./style.module.scss";
+import globalFontStyles from "../../../styles/globalFonts.module.scss";
+
 const Pagination = () => {
     return (
-        <div>
-            {/* If previous page exists: */}
-            <span>{"< "}Anterior</span>
-            <div>
-                <span>1</span> de <span>1</span>
+        <div
+            className={`${styles.pagination_container} ${globalFontStyles.heading_5_600}`}
+        >
+            <span className={styles.pagination_container__colored}>
+                {"< "}Anterior
+            </span>
+            <div className={styles.pagination_container__quantity}>
+                <span className={styles.quantity__grey_modify}>1</span> de{" "}
+                <span>1</span>
             </div>
-            {/* If next page exists */}
-            <span>Seguinte{" >"}</span>
+
+            <span className={styles.pagination_container__colored}>
+                Seguinte{" >"}
+            </span>
         </div>
     );
 };

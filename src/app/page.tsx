@@ -13,10 +13,10 @@ export default function Home() {
                 <NavBar />
             </header>
 
+            <Banner />
             <main className={styles.body__main}>
                 <div className={styles.main__container}>
-                    <Banner />
-                    <section>
+                    <section className={styles.container__main_section}>
                         <FilterTab />
                         <ProductList />
                     </section>
