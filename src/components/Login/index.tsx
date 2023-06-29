@@ -1,6 +1,6 @@
 "use client";
 import Link from "next/link";
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { z } from "zod";
 import Button from "../Global/Button";
 import Input from "../Global/Input/index";
@@ -17,6 +17,14 @@ const schemaLogin = z.object({
 });
 
 const LoginForm = () => {
+    const [token, setToken] = useState("");
+
+    // useEffect(() => {
+    //     if (token !== "") {
+    //         Router.push("/product");
+    //     }
+    // }, [token]);
+
     const handleSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
         event.preventDefault();
         const formData = new FormData(event.currentTarget);
@@ -29,10 +37,9 @@ const LoginForm = () => {
             //colocar um tost pra indicar o usuario
             //colocar a requisição login
             const token = await userLoginRoute(payload);
-            localStorage.setItem("token", token!.token);
-            console.log("teste");
+            setToken(token!.token);
+            location.pathname = "/product";
             // toast.success("Sucesso");
-            Router.push("/product");
         } catch (error) {
             // toast.error("Verifique se os dados estão corretos");
         }
