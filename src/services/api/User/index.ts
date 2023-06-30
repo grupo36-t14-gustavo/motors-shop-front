@@ -1,4 +1,6 @@
 import motorshopApi, { returnAxiosError } from "..";
+import { AxiosError } from "axios";
+import { setCookie } from "nookies";
 
 export interface iCreateUser {
     name: string;
@@ -41,7 +43,10 @@ export const createUserWithAdressRoute = async (
     userData: iCreateUser
 ): Promise<iReturnUser | undefined> => {
     try {
-        const createdUserAndAdress = await motorshopApi.post("/users/", userData);
+        const createdUserAndAdress = await motorshopApi.post(
+            "users/",
+            userData
+        );
 
         return createdUserAndAdress.data;
     } catch (err) {
@@ -53,7 +58,7 @@ export const userLoginRoute = async (
     loginData: iUserLogin
 ): Promise<iAccessToken | undefined> => {
     try {
-        const accessToken = await motorshopApi.post("/users/", loginData);
+        const accessToken = await motorshopApi.post("users/login/", loginData);
 
         return accessToken.data;
     } catch (err) {
@@ -65,7 +70,7 @@ export const retrieveUserRoute = async (
     accessToken: string
 ): Promise<iReturnUser | undefined> => {
     try {
-        const retrievedUser = await motorshopApi.get("/users/", {
+        const retrievedUser = await motorshopApi.get("users/", {
             headers: {
                 Authorization: `Bearer ${accessToken}`,
             },
@@ -82,15 +87,11 @@ export const updateUserRoute = async (
     accessToken: string
 ): Promise<iReturnUser | undefined> => {
     try {
-        const updatedUser = await motorshopApi.patch(
-            "/users/",
-            updateUserData,
-            {
-                headers: {
-                    Authorization: `Bearer ${accessToken}`,
-                },
-            }
-        );
+        const updatedUser = await motorshopApi.patch("users/", updateUserData, {
+            headers: {
+                Authorization: `Bearer ${accessToken}`,
+            },
+        });
 
         return updatedUser.data;
     } catch (err) {

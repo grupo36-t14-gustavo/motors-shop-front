@@ -1,7 +1,13 @@
 import { ReactNode } from "react";
 import styles from "./style.module.scss";
 
-const BaseModal = ({ title, children }: { title: string, children: ReactNode }) => {
+const BaseModal = ({
+    title,
+    children,
+}: {
+    title: string;
+    children: ReactNode;
+}) => {
     return (
         <div className={styles.modal__background}>
             <div className={styles.background__container}>

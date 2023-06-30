@@ -1,4 +1,3 @@
-// import PropTypes from "prop-types";
 "use client";
 import styles from "./style.module.scss";
 import { ChangeEvent, useState } from "react";
@@ -7,38 +6,28 @@ const BaseInput = ({
     type,
     name,
     placeholder,
+    label,
+    handleChange,
 }: {
     type?: string;
     name: string;
     placeholder: string;
+    label: string;
+    handleChange: (event: ChangeEvent<HTMLInputElement>) => void;
 }) => {
-    const [cpf, setCpf] = useState("");
-
-    const maskCpfInput = (event: ChangeEvent<HTMLInputElement>) => {
-        const { value } = event.currentTarget;
-
-        const numericValue = value.replace(/\D/g, "");
-        const maskedValue = numericValue.replace(
-            /(\d{3})(\d{3})(\d{3})(\d{2})/,
-            "$1.$2.$3-$4"
-        );
-
-        setCpf(maskedValue);
-    };
 
     return (
-        <div>
-            <label htmlFor={name}></label>
-            {name === "userCpf" ? (
+        <>
+            <label htmlFor={name}>{label}</label>
+            {name === "cpf" ? (
                 <input
                     className={styles.input}
                     type={type || "text"}
                     id={name}
                     name={name}
-                    value={cpf}
                     placeholder={placeholder}
                     maxLength={14}
-                    onChange={maskCpfInput}
+                    onChange={handleChange}
                 />
             ) : (
                 <input
@@ -47,16 +36,11 @@ const BaseInput = ({
                     placeholder={placeholder}
                     className={styles.input}
                     name={name}
+                    onChange={handleChange}
                 />
             )}
-        </div>
+        </>
     );
 };
-
-// BaseInput.propTypes = {
-//     id: PropTypes.string.isRequired,
-//     placeholder: PropTypes.string,
-//     name: PropTypes.string.isRequired,
-// };
 
 export default BaseInput;
