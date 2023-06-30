@@ -8,6 +8,9 @@ import InputPassword from "../Global/Input/input.Password";
 import Label from "../Global/Label/index";
 import styles from "./style.module.scss";
 import { userLoginRoute } from "@/services/api/User";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
+
 
 const schemaLogin = z.object({
     email: z.string().email(),
@@ -15,20 +18,31 @@ const schemaLogin = z.object({
 });
 
 const LoginForm = () => {
-    
     const handleSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
+        event.preventDefault();
         const formData = new FormData(event.currentTarget);
         const data = {
             email: formData.get("emailInput") as string,
             password: formData.get("passwordInput") as string,
         };
         try {
+
             schemaLogin.parse(data);
             await userLoginRoute(data)
           
         } catch (error) {
             alert(error)
             //tratar o erro com o toast
+            const delay = 2000;
+            const payload = schemaLogin.parse(data);
+            const token = await userLoginRoute(payload);
+            localStorage.setItem("token", token!.token);
+            setTimeout(() => {
+                location.pathname = "/product";
+            }, delay);
+            toast.success("Sucesso");
+        } catch (error) {
+            toast.error("Verifique se os dados estão corretos");
         }
     };
 
@@ -61,6 +75,13 @@ const LoginForm = () => {
                     </button>
                 </form>
             </div>
+            <ToastContainer
+                position="top-right"
+                autoClose={1500}
+                hideProgressBar={false}
+                closeOnClick
+                theme="light"
+            />
         </>
     );
 };

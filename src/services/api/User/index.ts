@@ -49,7 +49,10 @@ export const createUserWithAdressRoute = async (
     userData: iCreateUser
 ): Promise<iReturnUser | undefined> => {
     try {
-        const createdUserAndAdress = await motorshopApi.post("/users/", userData);
+        const createdUserAndAdress = await motorshopApi.post(
+            "/users/",
+            userData
+        );
 
         return createdUserAndAdress.data;
     } catch (err) {
@@ -61,7 +64,7 @@ export const userLoginRoute = async (
     loginData: iUserLogin
 ): Promise<iAccessToken | undefined> => {
     try {
-        const accessToken = await motorshopApi.post("/users/", loginData);
+        const accessToken = await motorshopApi.post("/users/login", loginData);
 
         return accessToken.data;
     } catch (err) {
