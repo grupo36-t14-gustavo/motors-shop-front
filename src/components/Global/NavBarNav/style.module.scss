@@ -2,12 +2,19 @@
 
 .header__nav_bar {
     width: 100%;
+    max-width: 1600px;
     height: 80px;
     padding: 0 60px;
     display: flex;
     justify-content: space-between;
     align-items: center;
     background-color: $grey-10;
+<<<<<<< HEAD
     position: fixed;
 
+=======
+    // position: fixed;
+    // top: 0;
+    // left: 0;
+>>>>>>> 82448edff73047a9d663cd9008ac917297b4a86a
 }

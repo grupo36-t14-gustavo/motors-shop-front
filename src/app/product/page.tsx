@@ -27,7 +27,10 @@ export default function Product() {
                     <ProductInfoDiv>
                         <div>
                             <div>
-                                <h3>Fusca 1600 Fusca 1600 Fusca 1600 Fusca 1600 Fusca 1600 </h3>
+                                <h3>
+                                    Fusca 1600 Fusca 1600 Fusca 1600 Fusca 1600
+                                    Fusca 1600{" "}
+                                </h3>
                             </div>
                             <div>
                                 <div>
@@ -48,10 +51,12 @@ export default function Product() {
                         <div>
                             <h3>Descrição</h3>
                             <p>
-                                Lorem, ipsum dolor sit amet consectetur adipisicing elit.
-                                Sequi saepe nostrum impedit provident? Velit
-                                tenetur officia sapiente molestias voluptate repellendus,
-                                rem nostrum neque soluta odio iusto, asperiores unde, totam repellat.
+                                Lorem, ipsum dolor sit amet consectetur
+                                adipisicing elit. Sequi saepe nostrum impedit
+                                provident? Velit tenetur officia sapiente
+                                molestias voluptate repellendus, rem nostrum
+                                neque soluta odio iusto, asperiores unde, totam
+                                repellat.
                             </p>
                         </div>
                     </ProductDescDiv>
@@ -64,26 +69,51 @@ export default function Product() {
                                     <h3>Fotos</h3>
                                 </div>
                                 <div>
-                                    <img src="https://www.revistafullpower.com.br/wp-content/uploads/2015/10/ABRE9.jpg" alt="Fusca" />
-                                    <img src="https://www.revistafullpower.com.br/wp-content/uploads/2015/10/ABRE9.jpg" alt="Fusca" />
-                                    <img src="https://www.revistafullpower.com.br/wp-content/uploads/2015/10/ABRE9.jpg" alt="Fusca" />
-                                    <img src="https://www.revistafullpower.com.br/wp-content/uploads/2015/10/ABRE9.jpg" alt="Fusca" />
-                                    <img src="https://www.revistafullpower.com.br/wp-content/uploads/2015/10/ABRE9.jpg" alt="Fusca" />
-                                    <img src="https://www.revistafullpower.com.br/wp-content/uploads/2015/10/ABRE9.jpg" alt="Fusca" />
+                                    <img
+                                        src="https://www.revistafullpower.com.br/wp-content/uploads/2015/10/ABRE9.jpg"
+                                        alt="Fusca"
+                                    />
+                                    <img
+                                        src="https://www.revistafullpower.com.br/wp-content/uploads/2015/10/ABRE9.jpg"
+                                        alt="Fusca"
+                                    />
+                                    <img
+                                        src="https://www.revistafullpower.com.br/wp-content/uploads/2015/10/ABRE9.jpg"
+                                        alt="Fusca"
+                                    />
+                                    <img
+                                        src="https://www.revistafullpower.com.br/wp-content/uploads/2015/10/ABRE9.jpg"
+                                        alt="Fusca"
+                                    />
+                                    <img
+                                        src="https://www.revistafullpower.com.br/wp-content/uploads/2015/10/ABRE9.jpg"
+                                        alt="Fusca"
+                                    />
+                                    <img
+                                        src="https://www.revistafullpower.com.br/wp-content/uploads/2015/10/ABRE9.jpg"
+                                        alt="Fusca"
+                                    />
                                 </div>
                             </div>
                         </ProductImgListDiv>
                         <ProductOwnerDiv>
                             <div>
                                 <div>
-                                    <img src="https://4.bp.blogspot.com/-mZVw3_1N_SU/TnCkiuj72jI/AAAAAAAAFms/95htKzb9cZU/s1600/D%2527Alessandro%2Bcom%2Ba%2BTa%25C3%25A7a%2Bda%2BLibertadores.jpg" alt="Foto de Perfil" />
+                                    <img
+                                        src="https://4.bp.blogspot.com/-mZVw3_1N_SU/TnCkiuj72jI/AAAAAAAAFms/95htKzb9cZU/s1600/D%2527Alessandro%2Bcom%2Ba%2BTa%25C3%25A7a%2Bda%2BLibertadores.jpg"
+                                        alt="Foto de Perfil"
+                                    />
                                 </div>
                                 <div>
                                     <h3>Andrés Nicolás</h3>
                                 </div>
-                                <span>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Esse minus consequatur
-                                    beatae nesciunt? Quidem cumque iure odio enim repellendus. Nesciunt neque porro
-                                    voluptatum ea officiis deleniti iste quaerat sit minus!
+                                <span>
+                                    Lorem ipsum dolor sit amet consectetur,
+                                    adipisicing elit. Esse minus consequatur
+                                    beatae nesciunt? Quidem cumque iure odio
+                                    enim repellendus. Nesciunt neque porro
+                                    voluptatum ea officiis deleniti iste quaerat
+                                    sit minus!
                                 </span>
                                 <div>
                                     <button>Ver todos anúncios</button>
