@@ -1,6 +1,4 @@
 import motorshopApi, { returnAxiosError } from "..";
-import { AxiosError } from "axios";
-import { setCookie } from "nookies";
 
 export interface iCreateUser {
     name: string;
