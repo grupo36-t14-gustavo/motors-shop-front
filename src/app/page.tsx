@@ -5,8 +5,6 @@ import RightsContainer from "@/components/Global/RightsContainerDiv";
 import Banner from "@/components/Home/BannerSection";
 import FilterTab from "@/components/Home/FilterTabAside";
 import styles from "../styles/layoutGlobal.module.scss";
-import BaseModal from "@/components/Global/BaseModalDiv";
-import EditModal from "@/components/Profile/EditModalDiv";
 
 export default function Home() {
     return (
@@ -30,9 +28,6 @@ export default function Home() {
             <footer className={styles.body__footer}>
                 <RightsContainer />
             </footer>
-
-            <EditModal/>
-
         </>
     );
 }

@@ -8,7 +8,7 @@ export const editProfileSchema = z.object({
     name: z.string(),
     email: z.string().email(),
     cpf: z.string().max(cpfLength),
-    phone: z.string().max(phoneLength),
-    birthDate: z.string().max(birthDateLength),
-    description: z.string(),
+    cellphone: z.string().max(phoneLength),
+    birthdate: z.string().max(birthDateLength),
+    bio: z.string(),
 });

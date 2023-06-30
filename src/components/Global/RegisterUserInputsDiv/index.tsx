@@ -1,4 +1,4 @@
-import { ChangeEvent, Dispatch, SetStateAction, useState } from "react";
+import { ChangeEvent, Dispatch, SetStateAction } from "react";
 import BaseInput from "../BaseInput";
 import BaseTextarea from "../BaseTextarea";
 import { tEditUser } from "@/interfaces/editUser.interface";
@@ -58,20 +58,20 @@ const RegisterUserInputs = ({
             />
             <BaseInput
                 type="text"
-                name="phone"
+                name="cellphone"
                 placeholder="(012) 93456-7890"
                 label="Celular"
                 handleChange={handleChange}
             />
             <BaseInput
                 type="number"
-                name="birthDate"
+                name="birthdate"
                 placeholder="01/12/99"
                 label="Data de Nascimento"
                 handleChange={handleChange}
             />
             <BaseTextarea
-                name="description"
+                name="bio"
                 placeholder="Digite sua descrição"
                 label="Descrição"
                 handleChange={handleChange}

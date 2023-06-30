@@ -99,7 +99,7 @@ export const updateUserRoute = async (
 
 export const deleteUserRoute = async (accessToken: string): Promise<void> => {
     try {
-        await motorshopApi.delete("/users/", {
+        await motorshopApi.delete("users/", {
             headers: {
                 Authorization: `Bearer ${accessToken}`,
             },
