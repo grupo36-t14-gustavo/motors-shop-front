@@ -10,7 +10,6 @@ import styles from "./style.module.scss";
 import { userLoginRoute } from "@/services/api/User";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
-
 const schemaLogin = z.object({
     email: z.string().email(),
     password: z.string(),
@@ -25,6 +24,9 @@ const LoginForm = () => {
             password: formData.get("passwordInput") as string,
         };
         try {
+            schemaLogin.parse(data);
+            await userLoginRoute(data);
+        } catch (error) {
             const delay = 2000;
             const payload = schemaLogin.parse(data);
             const token = await userLoginRoute(payload);
@@ -33,8 +35,6 @@ const LoginForm = () => {
                 location.pathname = "/product";
             }, delay);
             toast.success("Sucesso");
-        } catch (error) {
-            toast.error("Verifique se os dados estão corretos");
         }
     };
 
