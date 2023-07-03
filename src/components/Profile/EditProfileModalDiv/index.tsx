@@ -1,13 +1,13 @@
 "use client";
 import BaseModal from "@/components/Global/BaseModalDiv";
 import Button from "@/components/Global/Button";
-import RegisterUserInputs from "@/components/Global/RegisterUserInputsDiv";
+import UserFormInputs from "@/components/Global/UserFormInputs";
 import { editProfileSchema } from "@/schemas/editUserData.schema";
 import { updateUserRoute } from "@/services/api/User";
 import { FormEvent, useState } from "react";
 import { ZodError } from "zod";
 
-const EditModal = () => {
+const EditProfileModal = () => {
     const [formData, setFormData] = useState({});
 
     const handleSubmit = async (event: FormEvent<HTMLFormElement>) => {
@@ -34,7 +34,7 @@ const EditModal = () => {
     return (
         <BaseModal title="Editar Perfil">
             <form onSubmit={handleSubmit}>
-                <RegisterUserInputs setFormData={setFormData} />
+                <UserFormInputs setFormData={setFormData} />
                 <div>
                     <Button name="Cancelar" />
                     <Button name="Excluir Perfil" />
@@ -45,4 +45,4 @@ const EditModal = () => {
     );
 };
 
-export default EditModal;
+export default EditProfileModal;

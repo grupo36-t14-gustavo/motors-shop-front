@@ -3,10 +3,15 @@ import styles from "./style.module.scss";
 interface ButtonProps {
     name: string;
     isSubmit?: boolean;
+    handleClick?: () => void;
 }
-const Button: React.FC<ButtonProps> = ({ name, isSubmit }) => {
-    return (
-        <button className={styles.button} type={isSubmit ? "submit" : "button"}>
+const Button: React.FC<ButtonProps> = ({ name, isSubmit, handleClick }) => {
+    return isSubmit ? (
+        <button className={styles.button} type="submit">
+            {name}{" "}
+        </button>
+    ) : (
+        <button className={styles.button} type="button" onClick={handleClick}>
             {name}{" "}
         </button>
     );
@@ -15,6 +20,7 @@ const Button: React.FC<ButtonProps> = ({ name, isSubmit }) => {
 Button.propTypes = {
     name: PropTypes.string.isRequired,
     isSubmit: PropTypes.bool,
+    handleClick: PropTypes.func,
 };
 
 export default Button;

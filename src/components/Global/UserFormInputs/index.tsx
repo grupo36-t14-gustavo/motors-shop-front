@@ -3,7 +3,7 @@ import BaseInput from "../BaseInput";
 import BaseTextarea from "../BaseTextarea";
 import { tEditUser } from "@/interfaces/editUser.interface";
 
-const RegisterUserInputs = ({
+const UserFormInputs = ({
     setFormData,
 }: {
     setFormData: Dispatch<SetStateAction<tEditUser>>;
@@ -80,4 +80,4 @@ const RegisterUserInputs = ({
     );
 };
 
-export default RegisterUserInputs;
+export default UserFormInputs;
