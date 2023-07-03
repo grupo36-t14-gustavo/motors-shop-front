@@ -6,6 +6,7 @@
 .recover__page{
     width: 100vw;
     height: 100vh;
+    background-color: $grey-8;
 }
 
 .recover__section{
@@ -15,4 +16,45 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
+}
+
+.form{
+    background-color:$grey-10;
+    border-radius: 4px;
+    padding: 44px 48px;
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+
+    input{
+        border: 1px solid $grey-7;
+        padding: 0 16px;
+        color: $grey-3;
+        border-radius: 4px;
+
+        ::placeholder{
+            color: $grey-3;
+        }
+    }
+
+    .form__buttons{
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+
+        button{ 
+            width: 45%;
+            border-radius: 4px;
+            padding: 12px 28px 12px 28px;
+            background-color: $brand1;
+            font-family: "Inter";
+            font-style: normal;
+            font-weight: 600;
+            font-size: 20px;
+            line-height: 0px;
+            color: $white-fixed;
+            border: none;
+        }
+    }
 }
