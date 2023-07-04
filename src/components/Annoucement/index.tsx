@@ -7,10 +7,14 @@ export const Annoucement = () => {
     const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
         event.preventDefault();
         const formData = new FormData(event.currentTarget);
-        const data: Record<string, string> = {};
+        const data: { [key: string]: any } = {};
+
         formData.forEach((value, key) => {
-            data[key] = value.toString();
+            data[key] = value;
+            console.log(value);
         });
+        console.log(data, "linha 16");
+
         try {
         } catch (error) {}
     };
@@ -28,6 +32,7 @@ export const Annoucement = () => {
                 name="description"
                 placeholder="Faça uma descrição do seu veículo."
             />
+
             <Label htmlFor="year" name="Ano" />
             <input
                 type="number"
@@ -48,8 +53,24 @@ export const Annoucement = () => {
                 <option value="Eletrico">Elétrico</option>
                 <option value="Hibrido">Híbrido</option>
             </select>
-            <Label htmlFor="img" name="Foto" />
-            <Input id="img" name="img" placeholder="envie o link da imagem." />
+            <Label htmlFor="imgCapa" name="Imagem capa" />
+            <Input
+                id="imagem capa"
+                name="imagem capa"
+                placeholder="https://image.com"
+            />
+            <Label htmlFor="imagePrimary" name="1° Imagem da galeria" />
+            <Input
+                id="imagePrimary"
+                name="imagePrimary"
+                placeholder="https://image.com"
+            />
+            <Label htmlFor="imageSecund" name="2° Imagem da galeria" />
+            <Input
+                id="imageSecund"
+                name="imageSecund"
+                placeholder="https://image.com"
+            />
             <Button name="Cadastrar" />
         </form>
     );

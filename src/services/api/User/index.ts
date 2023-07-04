@@ -10,6 +10,14 @@ export interface iCreateUser {
     bio?: string;
     avatar?: string;
     isAdmin?: boolean;
+    address:{
+        cep: string;
+        state: string;
+        city: string;
+        street: string;
+        number: string;
+        complement: string;
+    }
 }
 
 export interface iUserLogin {
@@ -110,5 +118,13 @@ export const deleteUserRoute = async (accessToken: string): Promise<void> => {
         });
     } catch (err) {
         returnAxiosError(err);
+    }
+};
+export const registerUserRoute = async(registerData: any) =>{
+    try {
+        console.log(registerData);
+        await motorshopApi.post("/users", registerData);
+    } catch (error) {
+        return returnAxiosError(error);
     }
 };

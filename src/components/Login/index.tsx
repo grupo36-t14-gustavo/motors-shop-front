@@ -11,6 +11,7 @@ import { userLoginRoute } from "@/services/api/User";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 
+
 const schemaLogin = z.object({
     email: z.string().email(),
     password: z.string(),
@@ -21,10 +22,17 @@ const LoginForm = () => {
         event.preventDefault();
         const formData = new FormData(event.currentTarget);
         const data = {
-            email: formData.get("emailInput"),
-            password: formData.get("passwordInput"),
+            email: formData.get("emailInput") as string,
+            password: formData.get("passwordInput") as string,
         };
         try {
+
+            schemaLogin.parse(data);
+            await userLoginRoute(data)
+          
+        } catch (error) {
+            alert(error)
+            //tratar o erro com o toast
             const delay = 2000;
             const payload = schemaLogin.parse(data);
             const token = await userLoginRoute(payload);
