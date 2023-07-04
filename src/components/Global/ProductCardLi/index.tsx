@@ -2,29 +2,35 @@ import styles from "./style.module.scss";
 import UserContainer from "../UserContainerSpan";
 import TagContainer from "../TagContainerDiv";
 import globalFonts from "../../../styles/globalFonts.module.scss";
+import { iReturnCarAd } from "@/services/api/CarAds";
 
-const ProductCard = () => {
+const ProductCard = ({ carAdData }: { carAdData: iReturnCarAd }) => {
+    const maxDecimalLength = 2;
+
     return (
         <li className={styles.product_card}>
-            <img className={styles.product_card__img} src="https://source.unsplash.com/random" alt="" />
+            <img
+                className={styles.product_card__img}
+                src="https://source.unsplash.com/random"
+                alt=""
+            />
             <h3
                 className={`${styles.product_card__heading} ${globalFonts.heading_7_600}`}
             >
-                Porche 718
+                {carAdData.title}
             </h3>
             <p
                 className={`${styles.product_card__description} ${globalFonts.body_2_400}`}
             >
-                Lorem Ipsum is simply dummy text of the printing and typesetting
-                industry. Lorem...
+                {carAdData.description}
             </p>
-            <UserContainer />
+            <UserContainer ownerId={carAdData.ownerId}/>
             <div className={styles.product_card__tag_price_div}>
-                <TagContainer />
+                <TagContainer km={carAdData.km} year={carAdData.year}/>
                 <span
                     className={`${styles.tag_price_div__price_span} ${globalFonts.heading_7_500}`}
                 >
-                    R$ 00.000,00
+                    {`R$ ${carAdData.price.toFixed(maxDecimalLength)}`}
                 </span>
             </div>
         </li>

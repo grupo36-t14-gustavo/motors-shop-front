@@ -20,7 +20,6 @@
         "semi": ["error", "always"],
         "quotes": ["error", "double"],
         "no-duplicate-imports": "warn",
-        "no-unused-vars": "warn",
         "eqeqeq": "error",
         "func-style": ["error", "expression"],
         "no-magic-numbers": "error",

@@ -50,7 +50,7 @@ export const createUserWithAdressRoute = async (
 ): Promise<iReturnUser | undefined> => {
     try {
         const createdUserAndAdress = await motorshopApi.post(
-            "/users/",
+            "users/",
             userData
         );
 
@@ -64,7 +64,7 @@ export const userLoginRoute = async (
     loginData: iUserLogin
 ): Promise<iAccessToken | undefined> => {
     try {
-        const accessToken = await motorshopApi.post("/users/login", loginData);
+        const accessToken = await motorshopApi.post("users/login/", loginData);
 
         return accessToken.data;
     } catch (err) {
@@ -76,7 +76,7 @@ export const retrieveUserRoute = async (
     accessToken: string
 ): Promise<iReturnUser | undefined> => {
     try {
-        const retrievedUser = await motorshopApi.get("/users/", {
+        const retrievedUser = await motorshopApi.get("users/", {
             headers: {
                 Authorization: `Bearer ${accessToken}`,
             },
@@ -93,15 +93,11 @@ export const updateUserRoute = async (
     accessToken: string
 ): Promise<iReturnUser | undefined> => {
     try {
-        const updatedUser = await motorshopApi.patch(
-            "/users/",
-            updateUserData,
-            {
-                headers: {
-                    Authorization: `Bearer ${accessToken}`,
-                },
-            }
-        );
+        const updatedUser = await motorshopApi.patch("users/", updateUserData, {
+            headers: {
+                Authorization: `Bearer ${accessToken}`,
+            },
+        });
 
         return updatedUser.data;
     } catch (err) {
@@ -111,7 +107,7 @@ export const updateUserRoute = async (
 
 export const deleteUserRoute = async (accessToken: string): Promise<void> => {
     try {
-        await motorshopApi.delete("/users/", {
+        await motorshopApi.delete("users/", {
             headers: {
                 Authorization: `Bearer ${accessToken}`,
             },
