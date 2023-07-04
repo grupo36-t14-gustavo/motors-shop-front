@@ -32,7 +32,7 @@ export const Annoucement: React.FC<AnnoucementProps> = ({ closeModal }) => {
                 isMain: boolean,
             },
         };
-        console.log(data);
+
         formData.forEach((value, key) => {
             data[key] = value;
         });
