@@ -14,6 +14,13 @@ export interface iCreateCarAd {
     images: [] 
 }
 
+export interface iReturnPaginatedCarAds {
+    prevPage: string;
+    nextPage: string;
+    count: number;
+    data: iReturnCarAd[];
+}
+
 export interface iReturnCarAd extends iCreateCarAd {
     id: string;
     ownerId: string;
@@ -44,6 +51,24 @@ export const createCarAdRoute = async (
         });
 
         return createdCarAd.data;
+    } catch (err) {
+        returnAxiosError(err);
+    }
+};
+
+export const listAllCarAds = async (pageUrl?: string): Promise<iReturnPaginatedCarAds | undefined> => {
+    try {
+        let carAdList;
+        if (pageUrl) {
+            carAdList = await motorshopApi.get(pageUrl);
+
+            return carAdList.data;
+        }
+
+        carAdList =  await motorshopApi.get("cars/ads/all/");
+
+
+        return carAdList.data;
     } catch (err) {
         returnAxiosError(err);
     }

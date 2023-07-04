@@ -2,12 +2,13 @@
 import Image from "next/image";
 import userDefaultPhoto from "../../assets/img/pngegg.png";
 import logoImage from "../../assets/img/Motors.png";
-import React, { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import { useRouter } from "next/navigation";
 import styles from "./style.module.scss";
-import { Annoucement } from "../Annoucement";
+import { Annoucement } from "../AnnouncementModalDiv/index2";
 import { retrieveUserRoute } from "@/services/api/User";
-import { User } from "./interface.Profile";
+import { User } from "../../../interfaces/profile.interface";
+
 const Profile = () => {
     const [openMenu, setMenuOpen] = useState(false);
     const [openModal, setModal] = useState(false);
@@ -29,7 +30,6 @@ const Profile = () => {
     const modalClose = () => {
         setModal(false);
     };
-    const token = localStorage.getItem("token");
 
     useEffect(() => {
         const fetchData = async () => {
@@ -45,6 +45,7 @@ const Profile = () => {
 
         fetchData();
     }, [setUserData]);
+
     return (
         <>
             <div className={styles.div_conteiner_blue}>

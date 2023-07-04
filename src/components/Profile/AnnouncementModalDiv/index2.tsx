@@ -1,8 +1,8 @@
 "user client";
-import Button from "../Global/Button";
+import Button from "../../Global/Button";
 import Input from "../Global/Input";
-import Label from "../Global/Label";
-import InputAndLabel from "../Global/LabelAndInput";
+import Label from "../../Global/Label";
+import InputAndLabel from "../../Global/LabelAndInput";
 import styles from "./style.module.scss";
 import { ToastContainer, toast } from "react-toastify";
 import { boolean } from "zod";
@@ -11,7 +11,9 @@ import { createCarAdRoute } from "@/services/api/CarAds";
 interface AnnoucementProps {
     closeModal: () => void;
 }
-export const Annoucement: React.FC<AnnoucementProps> = ({ closeModal }) => {
+export const Annoucement: React.FC<AnnoucementProps> = ({
+    closeModal,
+}: AnnoucementProps) => {
     const handleSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
         event.preventDefault();
         const formData = new FormData(event.currentTarget);

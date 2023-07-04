@@ -1,4 +1,4 @@
-import { User } from "@/components/Profile/interface.Profile";
+import { User } from "@/interfaces/profile.interface";
 import motorshopApi, { returnAxiosError } from "..";
 
 export interface iCreateUser {
@@ -11,14 +11,14 @@ export interface iCreateUser {
     bio?: string;
     avatar?: string;
     isAdmin?: boolean;
-    address:{
+    address: {
         cep: string;
         state: string;
         city: string;
         street: string;
         number: string;
         complement: string;
-    }
+    };
 }
 
 export interface iUserLogin {
@@ -51,7 +51,7 @@ export const createUserWithAdressRoute = async (
 ): Promise<iReturnUser | undefined> => {
     try {
         const createdUserAndAdress = await motorshopApi.post(
-            "/users/",
+            "users/",
             userData
         );
 
@@ -65,20 +65,17 @@ export const userLoginRoute = async (
     loginData: iUserLogin
 ): Promise<iAccessToken | undefined> => {
     try {
-        const accessToken = await motorshopApi.post("/users/login", loginData);
-
+        const accessToken = await motorshopApi.post("users/login/", loginData);
 
         return accessToken.data;
-    } catch (error:any) {
+    } catch (error: any) {
         returnAxiosError(error);
     }
 };
 
-export const retrieveUserRoute = async (
-    accessToken: string
-) => {
+export const retrieveUserRoute = async (accessToken: string) => {
     try {
-        const retrievedUser = await motorshopApi.get("/users/", {
+        const retrievedUser = await motorshopApi.get("users/", {
             headers: {
                 Authorization: `Bearer ${accessToken}`,
             },
@@ -95,15 +92,11 @@ export const updateUserRoute = async (
     accessToken: string
 ): Promise<iReturnUser | undefined> => {
     try {
-        const updatedUser = await motorshopApi.patch(
-            "/users/",
-            updateUserData,
-            {
-                headers: {
-                    Authorization: `Bearer ${accessToken}`,
-                },
-            }
-        );
+        const updatedUser = await motorshopApi.patch("users/", updateUserData, {
+            headers: {
+                Authorization: `Bearer ${accessToken}`,
+            },
+        });
 
         return updatedUser.data;
     } catch (err) {
@@ -113,7 +106,7 @@ export const updateUserRoute = async (
 
 export const deleteUserRoute = async (accessToken: string): Promise<void> => {
     try {
-        await motorshopApi.delete("/users/", {
+        await motorshopApi.delete("users/", {
             headers: {
                 Authorization: `Bearer ${accessToken}`,
             },
@@ -122,8 +115,7 @@ export const deleteUserRoute = async (accessToken: string): Promise<void> => {
         returnAxiosError(err);
     }
 };
-export const registerUserRoute = async(registerData: any) =>{
-
+export const registerUserRoute = async (registerData: any) => {
     try {
         await motorshopApi.post("/users", registerData);
     } catch (error) {
