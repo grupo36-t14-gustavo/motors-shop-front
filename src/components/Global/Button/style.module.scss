@@ -6,6 +6,7 @@
     left: 48px;
     top: 330px;
     border-radius: 4px;
+   
     padding: 12px 28px 12px 28px;
     background-color: $brand1;
     font-family: "Inter";
@@ -15,4 +16,6 @@
     line-height: 0px;
     color: $white-fixed;
     border: none;
+    cursor:pointer;
+    
 }

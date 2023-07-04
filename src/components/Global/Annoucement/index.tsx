@@ -7,42 +7,42 @@ export const Annoucement = () => {
     const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
         event.preventDefault();
         const formData = new FormData(event.currentTarget);
-        const data: Record<string, string> = {};
+        const data: { [key: string]: any } = {};
+
         formData.forEach((value, key) => {
-            data[key] = value.toString();
+            data[key] = value;
         });
+
         try {
         } catch (error) {}
     };
     return (
         <form onSubmit={handleSubmit}>
-            <Label htmlFor="title" name="Titulo" />
+            <BaseInput name="brand" placeholder="Ex:Kia" label="Marca" />
+
+            <BaseInput name="model" placeholder="Ex: Soul" label="Modelo" />
             <BaseInput
-                id="title"
-                name="title"
-                placeholder="Descreva seu anúncio"
-            />
-            <Label htmlFor="brand" name="Marca" />
-            <BaseInput id="brand" name="brand" placeholder="Ex:Kia" />
-            <Label htmlFor="model" name="Modelo" />
-            <BaseInput id="model" name="model" placeholder="Ex: Soul" />
-            <Label htmlFor="description" name="Descrição" />
-            <BaseInput
-                id="description"
                 name="description"
                 placeholder="Faça uma descrição do seu veículo."
+                label="Descrição"
             />
-            <Label htmlFor="year" name="Ano" />
-            <input
+
+            <BaseInput
                 type="number"
-                id="year"
                 name="number"
                 placeholder="Ex:2012"
+                label="Ano"
             />
-            <Label htmlFor="km" name="km" />
-            <input type="number" id="km" placeholder="Ex:125" />
-            <Label htmlFor="color" name="Cor" />
-            <BaseInput id="color" name="color" placeholder="Qual é a cor?" />
+
+            <BaseInput
+                type="number"
+                name="km"
+                placeholder="Ex:125"
+                label="Quilometragem"
+            />
+
+            <BaseInput name="color" placeholder="Qual é a cor?" label="Cor" />
+
             <Label htmlFor="fuelType" name="Tipo de combustível" />
             <select name="Tipo de combustível" id="fuelType">
                 <option value="Gasolina">Gasolina</option>
@@ -52,13 +52,26 @@ export const Annoucement = () => {
                 <option value="Eletrico">Elétrico</option>
                 <option value="Hibrido">Híbrido</option>
             </select>
-            <Label htmlFor="img" name="Foto" />
+
             <BaseInput
-                id="img"
-                name="img"
-                placeholder="envie o link da imagem."
+                name="banner"
+                placeholder="https://image.com"
+                label="Imagem da Capa"
             />
-            <Button name="Cadastrar" />
+
+            <BaseInput
+                name="image"
+                placeholder="https://image.com"
+                label="1ª Imagem da Galeria"
+            />
+
+            <BaseInput
+                name="image"
+                placeholder="https://image.com"
+                label="2ª Imagem da Galeria"
+            />
+
+            <Button name="Cadastrar" isSubmit={true} />
         </form>
     );
 };

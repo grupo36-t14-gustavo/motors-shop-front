@@ -27,6 +27,7 @@ const LoginForm = () => {
             const payload = schemaLogin.parse(data);
             const token = await userLoginRoute(payload);
             localStorage.setItem("token", token!.token);
+
             setTimeout(() => {
                 location.pathname = "/product";
             }, delay);

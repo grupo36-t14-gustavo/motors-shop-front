@@ -45,7 +45,9 @@ const FormRegister = () => {
             isAdmin: userType,
             address: adressData,
         };
+   
 
+  
         try {
             const maxTimeoutMs = 3000;
             const parsedUserData = schemaRegister.parse(formData);
@@ -72,9 +74,10 @@ const FormRegister = () => {
 
     return (
         <div className={styles.container_form}>
-            <div className={styles.style_div_form}>
+            <div className={styles.style_div_form} >
                 <span>
-                    <p className={styles.title_register}>Cadastro</p>
+                
+                    <p className={styles.title_register} >Cadastro</p>
                 </span>
 
                 <form onSubmit={handleSubmit} className={styles.form}>

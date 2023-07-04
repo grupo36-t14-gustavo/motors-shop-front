@@ -24,7 +24,7 @@
     width: 307px;
 }
 .title_login_form {
-    font-family: "Lexend", sans-serif;
+    font-family:$font-lexend;
     font-weight: 500;
     font-size: 24px;
     line-height: 30px;
@@ -37,22 +37,23 @@
     border-radius: 4px;
     padding: 12px 28px 12px 28px;
     background-color: $white-fixed;
-    font-family: "Inter", sans-serif;
+    font-family:$font-inter;
     font-style: normal;
     font-weight: 600;
     font-size: 20px;
     line-height: 0px;
     color: $grey-0;
+    cursor: pointer;
 }
 .tag_link {
     text-decoration: none;
-    font-family: "Inter", sans-serif;
+    font-family: $font-inter;
     font-weight: 600;
     font-size: 18px;
     color: $grey-0;
 }
 .tag_link_register {
-    font-family: "Inter", sans-serif;
+    font-family: $font-inter;
     font-weight: 500;
     font-size: 16px;
     line-height: 24px;

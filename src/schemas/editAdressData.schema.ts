@@ -10,4 +10,4 @@ export const editAdressDataSchema = z.object({
     number: z.string().max(numberMaxLenth),
     complement: z.string(),
     street: z.string(),
-});
+}).partial();
