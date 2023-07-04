@@ -1,11 +1,12 @@
 import { ChangeEvent, Dispatch, SetStateAction } from "react";
 import BaseInput from "../BaseInput";
 import { tEditAdress } from "@/interfaces/user.interface";
+import { iCreateAdress } from "@/services/api/Adress";
 
 const AdressFormInputs = ({
     setFormData,
 }: {
-    setFormData: Dispatch<SetStateAction<tEditAdress>>;
+    setFormData: Dispatch<SetStateAction<iCreateAdress | tEditAdress>>;
 }) => {
     const handleChange = (event: ChangeEvent<HTMLInputElement>) => {
         const { name, value } = event.currentTarget;

@@ -1,6 +1,6 @@
 "use client";
 import styles from "./style.module.scss";
-import { ChangeEvent, useState } from "react";
+import { ChangeEvent } from "react";
 
 const BaseInput = ({
     type,
@@ -13,7 +13,7 @@ const BaseInput = ({
     name: string;
     placeholder: string;
     label: string;
-    handleChange: (event: ChangeEvent<HTMLInputElement>) => void;
+    handleChange?: (event: ChangeEvent<HTMLInputElement>) => void;
 }) => {
 
     return (
