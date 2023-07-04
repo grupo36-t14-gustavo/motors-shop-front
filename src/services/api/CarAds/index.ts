@@ -11,6 +11,7 @@ export interface iCreateCarAd {
     fuelType: string;
     price: number;
     isActive: boolean;
+    images: [] 
 }
 
 export interface iReturnCarAd extends iCreateCarAd {
@@ -32,9 +33,9 @@ export interface iUpdateCarAd {
 }
 
 export const createCarAdRoute = async (
-    carAdData: iCreateCarAd,
+    carAdData: any,
     accessToken: string
-): Promise<iReturnCarAd | undefined> => {
+) => {
     try {
         const createdCarAd = await motorshopApi.post("/cars/ads", carAdData, {
             headers: {

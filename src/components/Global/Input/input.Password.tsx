@@ -12,7 +12,7 @@ const InputPassword: React.FC<InputProps> = ({ id, placeholder, name }) => {
                 type="password"
                 id={id}
                 placeholder={placeholder}
-                className={styles.input}
+                className={styles.input_all}
                 name={name}
             />
         </div>

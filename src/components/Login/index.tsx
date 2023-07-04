@@ -19,22 +19,24 @@ const LoginForm = () => {
     const handleSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
         event.preventDefault();
         const formData = new FormData(event.currentTarget);
+
         const data = {
             email: formData.get("emailInput") as string,
             password: formData.get("passwordInput") as string,
         };
+
         try {
-            schemaLogin.parse(data);
-            await userLoginRoute(data);
-        } catch (error) {
             const delay = 2000;
             const payload = schemaLogin.parse(data);
+            console.log(payload);
             const token = await userLoginRoute(payload);
             localStorage.setItem("token", token!.token);
             setTimeout(() => {
-                location.pathname = "/product";
+                location.pathname = "/home";
             }, delay);
             toast.success("Sucesso");
+        } catch (error: any) {
+            toast.error("Ops! Verique o campo de email e senha.");
         }
     };
 

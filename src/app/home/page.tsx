@@ -1,9 +1,9 @@
-import DashUser from "@/components/Dashboard";
+import Profile from "../../components/Profile/index";
 
-export default function DashboardUser() {
+export default function ProfileUser() {
     return (
         <>
-            <DashUser />
+            <Profile />
         </>
     );
 }

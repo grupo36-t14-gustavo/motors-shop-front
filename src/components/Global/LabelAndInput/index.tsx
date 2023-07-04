@@ -1,27 +1,33 @@
 import PropTypes from "prop-types";
-import styles from "./style.module.scss";
+import styles from "./styles.module.scss";
 import { ChangeEvent } from "react";
-type InputProps = {
+type InputPropsLabel = {
     id: string;
     placeholder?: string;
     name: string;
+    eman: string;
+    htmlFor: string;
     value?: string;
     onChange?: (event: ChangeEvent<HTMLInputElement>) => void;
 };
-const Input: React.FC<InputProps> = ({
+const InputAndLabel: React.FC<InputPropsLabel> = ({
     id,
     placeholder,
     name,
+    eman,
     value,
     onChange,
 }) => {
     return (
-        <div>
+        <div className={styles.div_flex}>
+            <label className={styles.label_all} id={id} htmlFor={name}>
+                {eman}
+            </label>
             <input
+                className={styles.input_all}
                 type="text"
                 id={id}
                 placeholder={placeholder}
-                className={styles.input}
                 name={name}
                 value={value}
                 onChange={onChange}
@@ -30,12 +36,14 @@ const Input: React.FC<InputProps> = ({
     );
 };
 
-Input.propTypes = {
+InputAndLabel.propTypes = {
     id: PropTypes.string.isRequired,
     placeholder: PropTypes.string,
     name: PropTypes.string.isRequired,
+    htmlFor: PropTypes.string.isRequired,
+    eman: PropTypes.string.isRequired,
     value: PropTypes.string,
     onChange: PropTypes.func,
 };
 
-export default Input;
+export default InputAndLabel;
