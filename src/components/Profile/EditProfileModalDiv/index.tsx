@@ -5,7 +5,6 @@ import UserFormInputs from "@/components/Global/UserFormInputs";
 import { editProfileSchema } from "@/schemas/editUserData.schema";
 import { updateUserRoute } from "@/services/api/User";
 import { FormEvent, useState } from "react";
-import { ZodError } from "zod";
 
 const EditProfileModal = () => {
     const [formData, setFormData] = useState({});
@@ -24,9 +23,6 @@ const EditProfileModal = () => {
 
             // Insert toastify logic for success
         } catch (err) {
-            if (err instanceof ZodError) {
-                console.log(err.flatten().fieldErrors);
-            }
             // Insert toastify logic for failure
         }
     };

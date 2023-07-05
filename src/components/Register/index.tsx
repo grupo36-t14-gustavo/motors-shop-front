@@ -1,4 +1,6 @@
 "use client";
+import { toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 import { ChangeEvent, FormEvent, useState } from "react";
 import { z } from "zod";
 import Button from "../Global/Button/index";
@@ -45,13 +47,12 @@ const FormRegister = () => {
             isAdmin: userType,
             address: adressData,
         };
-   
 
-  
         try {
             const maxTimeoutMs = 3000;
             const parsedUserData = schemaRegister.parse(formData);
-            // colocar um toast para indicar o usuário
+
+            toast.success("Conta registrada com sucesso");
 
             await createUserWithAdressRoute(parsedUserData);
 
@@ -59,7 +60,7 @@ const FormRegister = () => {
                 router.push("/login/");
             }, maxTimeoutMs);
         } catch (err) {
-            // tratar o erro com o toast
+            toast.error("Credenciais inválidas.");
         }
     };
 
@@ -74,10 +75,9 @@ const FormRegister = () => {
 
     return (
         <div className={styles.container_form}>
-            <div className={styles.style_div_form} >
+            <div className={styles.style_div_form}>
                 <span>
-                
-                    <p className={styles.title_register} >Cadastro</p>
+                    <p className={styles.title_register}>Cadastro</p>
                 </span>
 
                 <form onSubmit={handleSubmit} className={styles.form}>

@@ -1,3 +1,4 @@
+import { User } from "@/interfaces/profile.interface";
 import motorshopApi, { returnAxiosError } from "..";
 
 export interface iCreateUser {
@@ -10,14 +11,14 @@ export interface iCreateUser {
     bio?: string;
     avatar?: string;
     isAdmin?: boolean;
-    address:{
+    address: {
         cep: string;
         state: string;
         city: string;
         street: string;
         number: string;
         complement: string;
-    }
+    };
 }
 
 export interface iUserLogin {
@@ -67,14 +68,12 @@ export const userLoginRoute = async (
         const accessToken = await motorshopApi.post("users/login/", loginData);
 
         return accessToken.data;
-    } catch (err) {
-        returnAxiosError(err);
+    } catch (error: any) {
+        returnAxiosError(error);
     }
 };
 
-export const retrieveUserRoute = async (
-    accessToken: string
-): Promise<iReturnUser | undefined> => {
+export const retrieveUserRoute = async (accessToken: string) => {
     try {
         const retrievedUser = await motorshopApi.get("users/", {
             headers: {
@@ -116,9 +115,8 @@ export const deleteUserRoute = async (accessToken: string): Promise<void> => {
         returnAxiosError(err);
     }
 };
-export const registerUserRoute = async(registerData: any) =>{
+export const registerUserRoute = async (registerData: any) => {
     try {
-        console.log(registerData);
         await motorshopApi.post("/users", registerData);
     } catch (error) {
         return returnAxiosError(error);

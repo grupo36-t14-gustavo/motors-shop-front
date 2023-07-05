@@ -1,7 +1,7 @@
 "user client";
-import Button from "../Button";
-import BaseInput from "../BaseInput";
-import Label from "../Label";
+import Button from "../../Global/Button";
+import BaseInput from "../../Global/BaseInput";
+import Label from "../../Global/Label";
 
 export const Annoucement = () => {
     const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
