@@ -1,6 +1,5 @@
 import { ReactNode, useState } from "react";
 import styles from "./style.module.scss";
-
 const BaseModal = ({
     title,
     children,
@@ -14,8 +13,13 @@ const BaseModal = ({
         <div className={styles.modal__background}>
             <div className={styles.background__container}>
                 <div className={styles.container__heading}>
-                    <h2>{title}</h2>
-                    <button onClick={() => setCloseModal(true)}>X</button>
+                    <h2 className={styles.styleFont}>{title}</h2>
+                    <button
+                        className={styles.button_close}
+                        onClick={() => setCloseModal(true)}
+                    >
+                        X
+                    </button>
                 </div>
                 {children}
             </div>

@@ -25,6 +25,7 @@ const Profile = () => {
     useEffect(() => {
         const fetchData = async () => {
             const accessToken = localStorage.getItem("token") || "";
+            console.log(accessToken);
             const user = await retrieveUserRoute(accessToken);
             if (user !== undefined) {
                 setUserData(user);
@@ -41,7 +42,6 @@ const Profile = () => {
         <>
             <NavBar />
             <div className={styles.div_conteiner_blue}>
-                
                 <main className={styles.main_conteiner_info_user}>
                     {/* {userData?.avatar ? (
                         <Image

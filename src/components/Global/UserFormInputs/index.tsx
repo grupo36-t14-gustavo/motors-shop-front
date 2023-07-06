@@ -10,7 +10,9 @@ const UserFormInputs = ({
 }: {
     setFormData: Dispatch<SetStateAction<tEditUser>>;
 }) => {
-    const handleChange = (event: ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+    const handleChange = (
+        event: ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
+    ) => {
         if (event.currentTarget.name === "cpf") {
             const newCpfValue = maskCpfInput(event.currentTarget.value);
             event.currentTarget.value = newCpfValue;
@@ -68,7 +70,7 @@ const UserFormInputs = ({
                 handleChange={handleChange}
             />
             <BaseInput
-                type="number"
+                type="text"
                 name="birthdate"
                 placeholder="01/12/99"
                 label="Data de Nascimento"

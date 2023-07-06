@@ -1,7 +1,9 @@
 "use client";
 import AdressFormInputs from "@/components/Global/AdressFormInputs";
 import BaseModal from "@/components/Global/BaseModalDiv";
+import Button from "@/components/Global/Button";
 import { FormEvent, useState } from "react";
+import styles from "../EditProfileModalDiv/style.module.scss";
 
 const EditAdressModal = () => {
     const [formData, setFormData] = useState({});
@@ -22,8 +24,12 @@ const EditAdressModal = () => {
 
     return (
         <BaseModal title="Editar Endereço">
-            <form action="">
-                <AdressFormInputs  setFormData={setFormData}/>
+            <form onSubmit={handleSubmit} action="">
+                <AdressFormInputs setFormData={setFormData} />
+                <div className={styles.div_conteiner_modal}>
+                    <Button name="Cancelar" />
+                    <Button name="Salvar Alterações" />
+                </div>
             </form>
         </BaseModal>
     );

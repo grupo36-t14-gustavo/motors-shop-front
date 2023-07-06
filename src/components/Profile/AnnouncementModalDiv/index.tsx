@@ -35,7 +35,11 @@ export const Annoucement = ({ closeModal }: { closeModal: () => void }) => {
 
                     <div>
                         <Label htmlFor="fuelType" name="Tipo de combustível" />
-                        <select className={styles.base_select} name="Tipo de combustível" id="fuelType">
+                        <select
+                            className={styles.base_select}
+                            name="Tipo de combustível"
+                            id="fuelType"
+                        >
                             <option value="Gasolina">Gasolina</option>
                             <option value="Diesel">Diesel</option>
                             <option value="Alcool">Álcool</option>
@@ -46,9 +50,9 @@ export const Annoucement = ({ closeModal }: { closeModal: () => void }) => {
                     </div>
                 </div>
 
-                <div>
+                <div className={styles.conteiner__input}>
                     <BaseInput
-                        type="number"
+                        type="text"
                         name="km"
                         placeholder="Ex:125"
                         label="Quilometragem"
@@ -61,14 +65,16 @@ export const Annoucement = ({ closeModal }: { closeModal: () => void }) => {
                     />
                 </div>
 
-                <div>
+                <div className={styles.conteiner__input}>
                     <BaseInput
+                        type="text"
                         name="priceFipe"
                         placeholder="R$ 48.0000,00"
                         label="Preço Tabela FIPE"
                     />
 
                     <BaseInput
+                        type="text"
                         name="price"
                         placeholder="R$ 50.0000,00"
                         label="Preço"
@@ -101,7 +107,7 @@ export const Annoucement = ({ closeModal }: { closeModal: () => void }) => {
 
                 <Button name="Adicionar campo para imagem da galeria" />
 
-                <div>
+                <div className={styles.conteiner_button}>
                     <Button name="Cancelar" handleClick={closeModal} />
                     <Button name="Criar anúncio" isSubmit={true} />
                 </div>

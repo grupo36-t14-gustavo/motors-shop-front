@@ -31,3 +31,14 @@
         }
     }
 }
+.button_close{
+    border: none;
+    background-color: $white-fixed;
+    cursor:pointer;
+}
+.font_style_h2{
+    font-family: $font-inter;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 14px;
+}
