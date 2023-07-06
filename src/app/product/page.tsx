@@ -1,3 +1,4 @@
+"use client";
 import ProductSection from "@/components/ProductPage/ProductSection";
 import ProductImgDiv from "@/components/ProductPage/ProductImgDiv";
 import ProductInfoDiv from "@/components/ProductPage/ProductInfoDiv";
@@ -8,8 +9,18 @@ import ProductDescDiv from "@/components/ProductPage/ProductDescDiv";
 import PhotosAndProfileSection from "@/components/ProductPage/PhotosAndProfileSection";
 import ProductOwnerDiv from "@/components/ProductPage/ProductOwnerDiv";
 import ProductImgListDiv from "@/components/ProductPage/ProductImgListDiv";
+import { useEffect } from "react";
 
 export default function Product() {
+    const carData = JSON.parse(localStorage.getItem("carData"));
+
+    useEffect(() => {
+        const carDataStorage = localStorage.getItem("carData");
+        if (!carDataStorage) {
+            location.pathname = "/home";
+        }
+    }, []);
+
     return (
         <div>
             <Background />
@@ -19,30 +30,24 @@ export default function Product() {
             <div className={styles.productsPage}>
                 <ProductSection>
                     <ProductImgDiv>
-                        <img
-                            src="https://www.revistafullpower.com.br/wp-content/uploads/2015/10/ABRE9.jpg"
-                            alt="product image"
-                        />
+                        <img src={carData.images[0]?.img} alt="product image" />
                     </ProductImgDiv>
                     <ProductInfoDiv>
                         <div>
                             <div>
-                                <h3>
-                                    Fusca 1600 Fusca 1600 Fusca 1600 Fusca 1600
-                                    Fusca 1600{" "}
-                                </h3>
+                                <h3>{carData.title}</h3>
                             </div>
                             <div>
                                 <div>
                                     <span>
-                                        <h6>1960</h6>
+                                        <h6>{carData.year}</h6>
                                     </span>
                                     <span>
-                                        <h6>24342</h6>
+                                        <h6>{carData.km}</h6>
                                         <h6>km</h6>
                                     </span>
                                 </div>
-                                <h4>R$: 3000,00</h4>
+                                <h4>R$: {carData.price}</h4>
                             </div>
                             <button>Comprar</button>
                         </div>
@@ -50,14 +55,7 @@ export default function Product() {
                     <ProductDescDiv>
                         <div>
                             <h3>Descrição</h3>
-                            <p>
-                                Lorem, ipsum dolor sit amet consectetur
-                                adipisicing elit. Sequi saepe nostrum impedit
-                                provident? Velit tenetur officia sapiente
-                                molestias voluptate repellendus, rem nostrum
-                                neque soluta odio iusto, asperiores unde, totam
-                                repellat.
-                            </p>
+                            <p>{carData.description}</p>
                         </div>
                     </ProductDescDiv>
                 </ProductSection>
