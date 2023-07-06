@@ -1,6 +1,6 @@
 "use client";
 import Link from "next/link";
-import React from "react";
+import React, { useState } from "react";
 import { z } from "zod";
 import Button from "../Global/Button";
 import styles from "./style.module.scss";
@@ -15,6 +15,8 @@ const schemaLogin = z.object({
 });
 
 const LoginForm = () => {
+    const [userLogged, setUserLogged] = useState<string | null>();
+
     const handleSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
         event.preventDefault();
         const formData = new FormData(event.currentTarget);
@@ -24,9 +26,11 @@ const LoginForm = () => {
             password: formData.get("password"),
         };
 
+
         try {
             const delay = 2000;
             const payload = schemaLogin.parse(data);
+            setUserLogged(data.email);
             console.log(payload);
             const token = await userLoginRoute(payload);
             localStorage.setItem("token", token!.token);
