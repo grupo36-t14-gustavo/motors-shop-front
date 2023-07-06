@@ -1,6 +1,6 @@
 "use client";
 import Link from "next/link";
-import React from "react";
+import React, { useState } from "react";
 import { z } from "zod";
 import Button from "../Global/Button";
 import Input from "../Global/Input/index";
@@ -18,6 +18,8 @@ const schemaLogin = z.object({
 });
 
 const LoginForm = () => {
+    const [userLogged, setUserLogged] = useState<string | null>();
+
     const handleSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
         event.preventDefault();
         const formData = new FormData(event.currentTarget);
@@ -29,7 +31,7 @@ const LoginForm = () => {
 
             schemaLogin.parse(data);
             await userLoginRoute(data)
-          
+            setUserLogged(data.email);
         } catch (error) {
             alert(error)
             //tratar o erro com o toast

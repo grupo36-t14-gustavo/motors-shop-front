@@ -96,3 +96,15 @@ export const deleteCarAdRoute = async (accessToken: string) => {
         returnAxiosError(err);
     }
 };
+
+export const listCarAdsById = async (
+    userId: string
+): Promise<iReturnCarAd[] | undefined> => {
+    try {
+        const listedCarAds = await motorshopApi.get(`cars/ads/${userId}`);
+
+        return listedCarAds.data;
+    } catch (err) {
+        returnAxiosError(err);
+    }
+};
