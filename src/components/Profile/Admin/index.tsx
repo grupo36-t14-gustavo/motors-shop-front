@@ -7,6 +7,7 @@ import styles from "./style.module.scss";
 import { iReturnUser, retrieveUserRoute } from "@/services/api/User";
 import NavBar from "@/components/Global/NavBarNav";
 import { Annoucement } from "../AnnouncementModalDiv";
+import ProductList from "@/components/Global/ProductListUl";
 
 const Profile = () => {
     const [openModal, setOpenModal] = useState(false);
@@ -90,6 +91,9 @@ const Profile = () => {
                     </span>
                     {openModal && <Annoucement closeModal={modalClose} />}
                 </main>
+                <section className={styles.ads}>
+                    <ProductList carAdList={userData?.cars} />
+                </section>
             </div>
         </>
     );
