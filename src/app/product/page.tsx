@@ -1,3 +1,4 @@
+"use client";
 import ProductSection from "@/components/ProductPage/ProductSection";
 import ProductImgDiv from "@/components/ProductPage/ProductImgDiv";
 import ProductInfoDiv from "@/components/ProductPage/ProductInfoDiv";
@@ -8,8 +9,28 @@ import ProductDescDiv from "@/components/ProductPage/ProductDescDiv";
 import PhotosAndProfileSection from "@/components/ProductPage/PhotosAndProfileSection";
 import ProductOwnerDiv from "@/components/ProductPage/ProductOwnerDiv";
 import ProductImgListDiv from "@/components/ProductPage/ProductImgListDiv";
+import { useEffect, useState } from "react";
 
 export default function Product() {
+    const [carData, setCarData] = useState();
+
+    useEffect(() => {
+        const loadCarData = () => {
+            const carDataStorage = localStorage.getItem("carData");
+
+            if (!carDataStorage) {
+                location.pathname = "/home";
+            }
+
+            const carInfo = JSON.parse(carDataStorage);
+            console.log(carInfo);
+            setCarData(carInfo);
+
+            console.log("111111", carData);
+        };
+        loadCarData();
+    }, []);
+
     return (
         <div>
             <Background />

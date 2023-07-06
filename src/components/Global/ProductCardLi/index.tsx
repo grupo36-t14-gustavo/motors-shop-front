@@ -8,10 +8,17 @@ const ProductCard = ({ carAdData }: { carAdData: iReturnCarAd }) => {
     const maxDecimalLength = 2;
 
     return (
-        <li className={styles.product_card}>
+        <li
+            className={styles.product_card}
+            onClick={(el) => {
+                el.preventDefault();
+                localStorage.setItem("carData", JSON.stringify(carAdData));
+                location.pathname = "/product";
+            }}
+        >
             <img
                 className={styles.product_card__img}
-                src="https://source.unsplash.com/random"
+                src="https:source.unsplash.com/random"
                 alt=""
             />
             <h3
@@ -24,13 +31,13 @@ const ProductCard = ({ carAdData }: { carAdData: iReturnCarAd }) => {
             >
                 {carAdData.description}
             </p>
-            <UserContainer ownerId={carAdData.ownerId}/>
+            <UserContainer ownerId={carAdData.ownerId} />
             <div className={styles.product_card__tag_price_div}>
-                <TagContainer km={carAdData.km} year={carAdData.year}/>
+                <TagContainer km={carAdData.km} year={carAdData.year} />
                 <span
                     className={`${styles.tag_price_div__price_span} ${globalFonts.heading_7_500}`}
                 >
-                    {`R$ ${carAdData.price.toFixed(maxDecimalLength)}`}
+                    {`R$ ${carAdData.price}`}
                 </span>
             </div>
         </li>
