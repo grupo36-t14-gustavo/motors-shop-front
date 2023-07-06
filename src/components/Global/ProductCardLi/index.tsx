@@ -2,10 +2,11 @@ import styles from "./style.module.scss";
 import UserContainer from "../UserContainerSpan";
 import TagContainer from "../TagContainerDiv";
 import globalFonts from "../../../styles/globalFonts.module.scss";
-import { iReturnCarAd } from "@/services/api/CarAds";
+import { Car } from "@/interfaces/profile.interface";
 
-const ProductCard = ({ carAdData }: { carAdData: iReturnCarAd }) => {
+const ProductCard = ({ carAdData }: { carAdData: Car }) => {
     const maxDecimalLength = 2;
+    const imageFirstIndex = 0;
 
     return (
         <li
@@ -18,8 +19,12 @@ const ProductCard = ({ carAdData }: { carAdData: iReturnCarAd }) => {
         >
             <img
                 className={styles.product_card__img}
-                src="https:source.unsplash.com/random"
-                alt=""
+                src={
+                    carAdData.images[imageFirstIndex]?.img
+                        ? carAdData.images[imageFirstIndex]?.img
+                        : "https:source.unsplash.com/random"
+                }
+                alt="anounce image"
             />
             <h3
                 className={`${styles.product_card__heading} ${globalFonts.heading_7_600}`}
