@@ -1,4 +1,3 @@
-import { User } from "@/interfaces/profile.interface";
 import motorshopApi, { returnAxiosError } from "..";
 
 export interface iCreateUser {
@@ -73,7 +72,9 @@ export const userLoginRoute = async (
     }
 };
 
-export const retrieveUserRoute = async (accessToken: string) => {
+export const retrieveUserRoute = async (
+    accessToken: string
+): Promise<iReturnUser | undefined> => {
     try {
         const retrievedUser = await motorshopApi.get("users/", {
             headers: {

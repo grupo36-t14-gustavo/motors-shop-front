@@ -1,21 +1,24 @@
-@import"../../styles/globalVariables.module.scss";
-@import"../../styles/globalFonts.module.scss";
-.div_conteiner_blue{
+@import "../../../styles/globalVariables.module.scss";
+@import "../../../styles/globalFonts.module.scss";
+
+.div_conteiner_blue {
     background: blue;
     width: 100vw;
     height: 350px;
-
 }
-.span_infoUser{
+
+.span_infoUser {
     display: flex;
     gap: 25px;
 }
-.span_bio_user{
+
+.span_bio_user {
     width: 91%;
     display: flex;
     margin: 0 auto;
 }
-.nav_user{
+
+.nav_user {
     width: 100%;
     height: 80px;
     padding: 0 60px;
@@ -24,14 +27,16 @@
     align-items: center;
     background-color: #fdfdfd;
     gap: 700px;
-    & .span_nav_user{
+
+    & .span_nav_user {
         display: flex;
         width: 130px;
         height: 35px;
         gap: 8px;
     }
-    & .profile_name{
-        color:$grey-2;
+
+    & .profile_name {
+        color: $grey-2;
         font-size: 16px;
         font-family: $font-inter;
         font-style: normal;
@@ -39,7 +44,8 @@
         line-height: 28px;
     }
 }
-.menubar_hamburguer{
+
+.menubar_hamburguer {
     left: 0;
     background-color: #ffffff;
     padding: 10px;
@@ -48,24 +54,23 @@
     border: 1px solid #4529e6;
     border-radius: 4px;
 
-    & .ul_menu{
+    & .ul_menu {
         list-style-type: none;
-        
     }
-    & .li_menu{
+    & .li_menu {
         padding: 8px 16px;
-        cursor:pointer;
+        cursor: pointer;
     }
-    .li_menu:hover{
+    .li_menu:hover {
         background-color: $white-fixed;
         color: $brand1;
     }
-    & .user_image{
-        cursor:pointer;
+    & .user_image {
+        cursor: pointer;
     }
 }
 
-.main_conteiner_info_user{
+.main_conteiner_info_user {
     background: $white-fixed;
     display: flex;
     flex-direction: column;
@@ -76,40 +81,40 @@
     gap: 20px;
     padding: 29px 35px;
 }
-.img_user_profile{
+.img_user_profile {
     width: 104px;
     height: 104px;
 }
-.button_create_anoouncement{
+.button_create_anoouncement {
     width: 150px;
     height: 40px;
     font-size: 16px;
-    font-family:$font-inter;
+    font-family: $font-inter;
     font-style: normal;
     font-weight: 600;
     line-height: 0px;
-    color:$brand1;
+    color: $brand1;
     border: 1px solid $brand1;
     background-color: $white-fixed;
-    cursor:pointer;}
-.name_user{
-   font-size: 20px;
-   font-family: $font-lexend;
-   font-style: normal;
-   font-weight: 600;
-   line-height: normal;
-   color: $grey-0;
+    cursor: pointer;
 }
-.type_user{
+.name_user {
+    font-size: 20px;
+    font-family: $font-lexend;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
+    color: $grey-0;
+}
+.type_user {
     font-size: 14px;
     font-family: $font-inter;
     font-style: normal;
     font-weight: 500;
     line-height: 24px;
-    color:$brand1; 
-
+    color: $brand1;
 }
-.text_bio_user{
+.text_bio_user {
     font-size: 16px;
     font-family: $font-inter;
     font-style: normal;

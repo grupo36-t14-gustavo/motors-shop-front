@@ -17,11 +17,11 @@ const BaseInput = ({
 }) => {
 
     return (
-        <>
+        <div className={styles.input_container}>
             <label htmlFor={name}>{label}</label>
             {name === "cpf" ? (
                 <input
-                    className={styles.input}
+                    className={styles.base_input}
                     type={type || "text"}
                     id={name}
                     name={name}
@@ -31,15 +31,15 @@ const BaseInput = ({
                 />
             ) : (
                 <input
+                    className={styles.base_input}
                     type={type || "text"}
                     id={name}
                     placeholder={placeholder}
-                    className={styles.input}
                     name={name}
                     onChange={handleChange}
                 />
             )}
-        </>
+        </div>
     );
 };
 
