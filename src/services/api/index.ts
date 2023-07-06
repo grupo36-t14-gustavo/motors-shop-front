@@ -1,7 +1,7 @@
 import axios, { AxiosError } from "axios";
 
 const motorshopApi = axios.create({
-    baseURL: "http://localhost:3030/",
+    baseURL: "http://localhost:3001/",
     timeout: 20000,
 });
 

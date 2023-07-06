@@ -11,6 +11,14 @@ export interface iCreateCarAd {
     fuelType: string;
     price: number;
     isActive: boolean;
+    images: [] 
+}
+
+export interface iReturnPaginatedCarAds {
+    prevPage: string;
+    nextPage: string;
+    count: number;
+    data: iReturnCarAd[];
 }
 
 export interface iReturnCarAd extends iCreateCarAd {
@@ -32,9 +40,9 @@ export interface iUpdateCarAd {
 }
 
 export const createCarAdRoute = async (
-    carAdData: iCreateCarAd,
+    carAdData: any,
     accessToken: string
-): Promise<iReturnCarAd | undefined> => {
+) => {
     try {
         const createdCarAd = await motorshopApi.post("/cars/ads", carAdData, {
             headers: {
@@ -43,6 +51,24 @@ export const createCarAdRoute = async (
         });
 
         return createdCarAd.data;
+    } catch (err) {
+        returnAxiosError(err);
+    }
+};
+
+export const listAllCarAds = async (pageUrl?: string): Promise<iReturnPaginatedCarAds | undefined> => {
+    try {
+        let carAdList;
+        if (pageUrl) {
+            carAdList = await motorshopApi.get(pageUrl);
+
+            return carAdList.data;
+        }
+
+        carAdList =  await motorshopApi.get("cars/ads/all/");
+
+
+        return carAdList.data;
     } catch (err) {
         returnAxiosError(err);
     }

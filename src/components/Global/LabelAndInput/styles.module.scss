@@ -1,0 +1,18 @@
+@import"../../../styles/globalVariables.module.scss";
+.div_flex{
+  display: flex;
+  flex-direction: column;
+}
+.input_all{
+    border-radius: 4px;
+    width: 270px;
+    height: 35px;
+    border: none;
+}
+.label_all{   
+    font-family: $font-inter;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 17px;
+    color: $grey-0;}
