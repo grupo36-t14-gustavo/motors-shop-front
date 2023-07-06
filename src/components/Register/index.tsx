@@ -5,11 +5,13 @@ import { ChangeEvent, FormEvent, useState } from "react";
 import { z } from "zod";
 import Button from "../Global/Button/index";
 import styles from "./style.module.scss";
+import fontStyles from "../../styles/globalFonts.module.scss";
 import UserFormInputs from "../Global/UserFormInputs";
 import AdressFormInputs from "../Global/AdressFormInputs";
 import { createUserWithAdressRoute } from "@/services/api/User";
 import { useRouter } from "next/navigation";
 import BaseInput from "../Global/BaseInput";
+import RightsContainer from "../Global/RightsContainerDiv";
 
 const schemaAddress = z.object({
     cep: z.string(),
@@ -74,63 +76,74 @@ const FormRegister = () => {
     };
 
     return (
-        <div className={styles.container_form}>
-            <div className={styles.style_div_form}>
-                <span>
-                    <p className={styles.title_register}>Cadastro</p>
-                </span>
-
-                <form onSubmit={handleSubmit} className={styles.form}>
-                    <p className={styles.title_info}>Informações pessoais</p>
-
-                    <UserFormInputs setFormData={setUserData} />
-
-                    <AdressFormInputs setFormData={setAdressData} />
-
-                    <p className={styles.p_title_for_type_user}>
-                        Tipo de úsuario
-                    </p>
-                    <span className={styles.span_for_type_user}>
-                        <input
-                            className={`${styles.button_for_type_user} ${
-                                userType === true ? styles.active_button : ""
-                            }`}
-                            type="button"
-                            value="Vendedor"
-                            id="button_clicked"
-                            onClick={() => setUserType(true)}
-                        />
-                        <input
-                            className={`${styles.button_for_type_user} ${
-                                userType === false ? styles.active_button : ""
-                            }`}
-                            type="button"
-                            value="Comprador"
-                            id="button_clicked"
-                            onClick={() => setUserType(false)}
-                        />
+        <>
+            <div className={styles.container_form}>
+                <div className={styles.style_div_form}>
+                    <span>
+                        <p
+                            className={`${styles.title_register} ${fontStyles.heading_5_500}`}
+                        >
+                            Cadastro
+                        </p>
                     </span>
 
-                    <BaseInput
-                        type="password"
-                        name="password"
-                        placeholder="Digitar Senha"
-                        label="Senha"
-                        handleChange={handleChange}
-                    />
+                    <form onSubmit={handleSubmit} className={styles.form}>
+                        <UserFormInputs setFormData={setUserData} />
 
-                    <BaseInput
-                        type="password"
-                        name="password"
-                        placeholder="Digitar Senha"
-                        label="Confirmar senha"
-                        handleChange={handleChange}
-                    />
+                        <AdressFormInputs setFormData={setAdressData} />
 
-                    <Button name="Finalizar cadastro" isSubmit={true} />
-                </form>
+                        <p
+                            className={`${fontStyles.body_2_500} ${styles.account_type_title}`}
+                        >
+                            Tipo de conta
+                        </p>
+                        <span className={styles.span_for_type_user}>
+                            <input
+                                className={`${styles.button_for_type_user} ${
+                                    userType === true
+                                        ? styles.active_button
+                                        : ""
+                                } ${fontStyles.buttons_inputlabel__modify}`}
+                                type="button"
+                                value="Vendedor"
+                                id="button_clicked"
+                                onClick={() => setUserType(true)}
+                            />
+                            <input
+                                className={`${styles.button_for_type_user} ${
+                                    userType === false
+                                        ? styles.active_button
+                                        : ""
+                                } ${fontStyles.buttons_inputlabel__modify}`}
+                                type="button"
+                                value="Comprador"
+                                id="button_clicked"
+                                onClick={() => setUserType(false)}
+                            />
+                        </span>
+
+                        <BaseInput
+                            type="password"
+                            name="password"
+                            placeholder="Digitar Senha"
+                            label="Senha"
+                            handleChange={handleChange}
+                        />
+
+                        <BaseInput
+                            type="password"
+                            name="password"
+                            placeholder="Digitar Senha"
+                            label="Confirmar senha"
+                            handleChange={handleChange}
+                        />
+
+                        <Button name="Finalizar cadastro" isSubmit={true} />
+                    </form>
+                </div>
             </div>
-        </div>
+            <RightsContainer />
+        </>
     );
 };
 

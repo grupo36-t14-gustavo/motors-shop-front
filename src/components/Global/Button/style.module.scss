@@ -1,21 +1,14 @@
 @import "../../../styles/globalVariables.module.scss";
 
 .button {
+    width: 100%;
     height: 48px;
-    width: 315px;
     left: 48px;
     top: 330px;
     border-radius: 4px;
-   
-    padding: 12px 28px 12px 28px;
+    padding: 12px 28px;
     background-color: $brand1;
-    font-family: "Inter";
-    font-style: normal;
-    font-weight: 600;
-    font-size: 20px;
-    line-height: 0px;
     color: $white-fixed;
     border: none;
     cursor:pointer;
-    
 }

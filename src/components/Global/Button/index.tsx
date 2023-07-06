@@ -1,5 +1,6 @@
 import PropTypes from "prop-types";
 import styles from "./style.module.scss";
+import fontStyles from "../../../styles/globalFonts.module.scss";
 import { MouseEvent } from "react";
 interface ButtonProps {
     name: string;
@@ -14,11 +15,19 @@ const Button: React.FC<ButtonProps> = ({
     value,
 }) => {
     return isSubmit ? (
-        <button className={styles.button} type="submit">
+        <button
+            className={`${styles.button} ${fontStyles.button_big_text__modify}`}
+            type="submit"
+        >
             {name}{" "}
         </button>
     ) : (
-        <button className={styles.button} type="button" onClick={handleClick} value={value}>
+        <button
+            className={`${styles.button} ${fontStyles.button_big_text__modify}`}
+            type="button"
+            onClick={handleClick}
+            value={value}
+        >
             {name}{" "}
         </button>
     );

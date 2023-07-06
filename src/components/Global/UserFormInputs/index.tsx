@@ -2,13 +2,15 @@ import { ChangeEvent, Dispatch, SetStateAction } from "react";
 import BaseInput from "../BaseInput";
 import BaseTextarea from "../BaseTextarea";
 import { tEditUser } from "@/interfaces/editUser.interface";
+import styles from "./style.module.scss";
+import fontStyles from "../../../styles/globalFonts.module.scss";
 
 const UserFormInputs = ({
     setFormData,
 }: {
     setFormData: Dispatch<SetStateAction<tEditUser>>;
 }) => {
-    const handleChange = (event: ChangeEvent<HTMLInputElement>) => {
+    const handleChange = (event: ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
         if (event.currentTarget.name === "cpf") {
             const newCpfValue = maskCpfInput(event.currentTarget.value);
             event.currentTarget.value = newCpfValue;
@@ -34,7 +36,9 @@ const UserFormInputs = ({
 
     return (
         <>
-            <h3>Informações Pessoais</h3>
+            <h3 className={`${styles.title_info} ${fontStyles.body_2_500}`}>
+                Informações Pessoais
+            </h3>
             <BaseInput
                 type="text"
                 name="name"

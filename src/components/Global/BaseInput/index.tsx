@@ -1,5 +1,6 @@
 "use client";
 import styles from "./style.module.scss";
+import fontStyles from "../../../styles/globalFonts.module.scss";
 import { ChangeEvent } from "react";
 
 const BaseInput = ({
@@ -15,13 +16,12 @@ const BaseInput = ({
     label: string;
     handleChange?: (event: ChangeEvent<HTMLInputElement>) => void;
 }) => {
-
     return (
         <div className={styles.input_container}>
-            <label htmlFor={name}>{label}</label>
+            <label className={`${fontStyles.buttons_inputlabel__modify}`} htmlFor={name}>{label}</label>
             {name === "cpf" ? (
                 <input
-                    className={styles.base_input}
+                    className={`${styles.base_input} ${fontStyles.buttons_inputlabel__modify}`}
                     type={type || "text"}
                     id={name}
                     name={name}
@@ -31,7 +31,7 @@ const BaseInput = ({
                 />
             ) : (
                 <input
-                    className={styles.base_input}
+                    className={`${styles.base_input} ${fontStyles.buttons_inputlabel__modify}`}
                     type={type || "text"}
                     id={name}
                     placeholder={placeholder}
