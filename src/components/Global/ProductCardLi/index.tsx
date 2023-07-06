@@ -19,11 +19,11 @@ const ProductCard = ({ carAdData }: { carAdData: Car }) => {
         >
             <img
                 className={styles.product_card__img}
-                src={
-                    carAdData.images[imageFirstIndex]?.img
-                        ? carAdData.images[imageFirstIndex]?.img
-                        : "https:source.unsplash.com/random"
-                }
+                // src={
+                //     carAdData.images[imageFirstIndex]?.img
+                //         ? carAdData.images[imageFirstIndex]?.img
+                //         : "https:source.unsplash.com/random"
+                // }
                 alt="anounce image"
             />
             <h3
