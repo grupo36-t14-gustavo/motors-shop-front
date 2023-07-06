@@ -1,0 +1,26 @@
+@import "../../../styles/globalFonts.module.scss";
+@import "../../../styles/globalVariables.module.scss";
+
+.imgContainer {
+    width: 250px;
+    height: 210px;
+}
+
+.img {
+    width: 100%;
+    height: 100%;
+}
+
+.nameModel {
+    display: flex;
+    gap: 10px;
+}
+
+.nameModelBox {
+    padding: 0 5px;
+}
+.infoBuyCar {
+    display: flex;
+    justify-content: space-between;
+    
+}

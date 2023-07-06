@@ -1,0 +1,74 @@
+@import "../../../styles/globalFonts.module.scss";
+@import "../../../styles/globalVariables.module.scss";
+
+.userInfoBox {
+    display: flex;
+    justify-content: center;
+    padding: 3%;
+}
+
+.userInfo {
+    background-color: red;
+    width: 100%;
+}
+
+.userName {
+    background-color: blue;
+    display: flex;
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    justify-content: center;
+    align-items: center;
+    color: white;
+}
+
+.advertiser {
+    background-color: purple;
+    color: #510351;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 90px;
+    height: 20px;
+}
+
+.nameAdvertiser {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 15px;
+}
+
+.createAd {
+    background-color: white;
+    border: 2.2px solid purple;
+    color: purple;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 110px;
+    height: 30px;
+    border-radius: 4px;
+}
+
+.firstContainer {
+    display: flex;
+    flex-direction: column;
+    padding: 5%;
+}
+
+.ul {
+    list-style: none;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10%;
+}
+
+.li {
+    width: 250px;
+}
+
+.userEditAd {
+    padding: 0 5px;
+}
