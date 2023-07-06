@@ -24,7 +24,9 @@ const ProductCard = ({ carAdData }: { carAdData: iReturnCarAd }) => {
             >
                 {carAdData.description}
             </p>
+
             <UserContainer ownerId={carAdData.ownerId}/>
+
             <div className={styles.product_card__tag_price_div}>
                 <TagContainer km={carAdData.km} year={carAdData.year}/>
                 <span

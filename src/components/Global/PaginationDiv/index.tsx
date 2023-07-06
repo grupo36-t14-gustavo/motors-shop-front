@@ -40,6 +40,7 @@ const Pagination = ({
             {/* className={styles.pagination_container__colored} */}
             {pagination?.previousPage && (
                 <Button
+                    className={styles.page_button}
                     name="< Anterior"
                     handleClick={changeCarAdListPage}
                     value={pagination?.previousPage}
@@ -53,6 +54,7 @@ const Pagination = ({
             {/* className={styles.pagination_container__colored} */}
             {pagination?.nextPage && (
                 <Button
+                    className={styles.page_button}
                     name="Seguinte >"
                     handleClick={changeCarAdListPage}
                     value={pagination?.nextPage}
