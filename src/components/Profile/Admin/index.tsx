@@ -1,13 +1,14 @@
 "use client";
 import Image from "next/image";
-import userDefaultPhoto from "../../assets/img/pngegg.png";
-import logoImage from "../../assets/img/Motors.png";
+import userDefaultPhoto from "../../../assets/img/pngegg.png";
+import logoImage from "../../../assets/img/Motors.png";
 import { useEffect, useState } from "react";
 import { useRouter } from "next/navigation";
 import styles from "./style.module.scss";
 import { Annoucement } from "../AnnouncementModalDiv/index2";
 import { retrieveUserRoute } from "@/services/api/User";
 import { User } from "../../../interfaces/profile.interface";
+import ProductListUl from "@/components/Global/ProductListUl";
 
 const Profile = () => {
     const [openMenu, setMenuOpen] = useState(false);
@@ -133,6 +134,9 @@ const Profile = () => {
                     </span>
                     {openModal && <Annoucement closeModal={modalClose} />}
                 </main>
+                <section className={styles.ads}>
+                    <ProductListUl carAdList={userData?.cars} />
+                </section>
             </div>
         </>
     );

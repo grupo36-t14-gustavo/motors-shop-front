@@ -29,7 +29,7 @@ interface Address {
     city: string;
     street: string;
 }
-interface Car {
+export interface Car {
     id: string;
     title: string;
     brand: string;
@@ -44,7 +44,7 @@ interface Car {
     ownerId: string;
     owner: User;
     createAt?: string;
-    // images: CarImage[]
+    images: CarImage[];
     comments: Comment[];
 }
 
@@ -65,4 +65,11 @@ enum FuelOptions {
     Flex,
     Eletrico,
     Hibrido,
+}
+
+interface CarImage {
+    id: string;
+    img: string;
+    isMain: boolean;
+    carId: string;
 }
