@@ -5,6 +5,7 @@ import UserFormInputs from "@/components/Global/UserFormInputs";
 import { editProfileSchema } from "@/schemas/editUserData.schema";
 import { updateUserRoute } from "@/services/api/User";
 import { FormEvent, useState } from "react";
+import styles from "./style.module.scss";
 
 const EditProfileModal = () => {
     const [formData, setFormData] = useState({});
@@ -31,7 +32,7 @@ const EditProfileModal = () => {
         <BaseModal title="Editar Perfil">
             <form onSubmit={handleSubmit}>
                 <UserFormInputs setFormData={setFormData} />
-                <div>
+                <div className={styles.div_conteiner_button}>
                     <Button name="Cancelar" />
                     <Button name="Excluir Perfil" />
                     <Button name="Salvar alterações" isSubmit={true} />

@@ -1,23 +1,29 @@
 @import "../../../styles/globalVariables.module.scss";
 
 .pagination_container {
-    // padding: 80px 0;
+    width: 100%;
+    height: 200px;
+    margin: 80px 0;
     display: flex;
     justify-content: center;
     align-items: center;
     gap: 20px;
 
-    & .pagination_container__colored {
+    & .page_button {
+        max-width: 150px;
         display: inline-block;
         color: $brand2;
+        background-color: $white-fixed;
+        border: none;
+        font-size: 24px;
+        font-weight: 700;
     }
 
     & .pagination_container__quantity {
-      color: $grey-4;
-
+        color: $grey-4;
     }
 
     & .quantity__grey_modify {
-      color: $grey-3;
+        color: $grey-3;
     }
-  }
+}

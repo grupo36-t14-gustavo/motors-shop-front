@@ -26,17 +26,17 @@ const LoginForm = () => {
             password: formData.get("password"),
         };
 
-
         try {
             const delay = 2000;
             const payload = schemaLogin.parse(data);
             setUserLogged(data.email);
-            console.log(payload);
+
             const token = await userLoginRoute(payload);
+
             localStorage.setItem("token", token!.token);
 
             setTimeout(() => {
-                location.pathname = "/home";
+                location.pathname = "/profile";
             }, delay);
             toast.success("Sucesso");
         } catch (error) {

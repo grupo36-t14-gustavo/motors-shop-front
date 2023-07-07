@@ -1,13 +1,14 @@
 @import "../../../styles/globalVariables.module.scss";
 
 .footer__rights_container {
-    width: 100%;
+    width: 95%;
     max-width: 1600px;
     height: 140px;
     padding: 0 60px;
     display: flex;
     justify-content: space-between;
     align-items: center;
+    background-color: $grey-0;
 
     & .rights_container__rights_span {
         color: $white-fixed;
@@ -19,5 +20,10 @@
         border-radius: 4px;
         border: none;
         background-color: $grey-1;
+
+        & > img {
+            width: 70%;
+            color: $white-fixed;
+        }
     }
 }

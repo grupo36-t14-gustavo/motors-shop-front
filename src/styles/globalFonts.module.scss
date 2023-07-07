@@ -1,18 +1,6 @@
 @import "./globalVariables.module.scss";
 
-.heading_1_700 {
-    font-size: 2.75rem;
-    font-weight: 700;
-}
-
-.heading_2_600 {
-    font-size: 2.25rem;
-}
-
-.heading_5_600 {
-    font-size: 1.5rem;
-}
-
+/* Font Family */
 .heading_1_700,
 .heading_2_600,
 .heading_3_600,
@@ -39,6 +27,7 @@
     font-family: $font-inter;
 }
 
+/* Font Weight */
 .heading_2_600,
 .heading_3_600,
 .heading_4_600,
@@ -67,6 +56,16 @@
     font-weight: 400;
 }
 
+/* Font Size */
+.heading_1_700 {
+    font-size: 2.75rem;
+    font-weight: 700;
+}
+
+.heading_2_600 {
+    font-size: 2.25rem;
+}
+
 .heading_3_500,
 .heading_3_600 {
     font-size: 2rem;
@@ -78,16 +77,13 @@
     font-size: 1.75rem;
 }
 
+.heading_5_600 {
+    font-size: 1.5rem;
+}
+
 .heading_6_500,
 .heading_6_600 {
     font-size: 1.25rem;
-}
-
-.buttons_inputlabel__modify,
-.button_medium_text__modify,
-.body_2_400,
-.body_2_500 {
-    font-size: 0.875rem;
 }
 
 .heading_7_500,
@@ -97,4 +93,11 @@
 .body_1_400,
 .body_1_600 {
     font-size: 1rem;
+}
+
+.buttons_inputlabel__modify,
+.button_medium_text__modify,
+.body_2_400,
+.body_2_500 {
+    font-size: 0.875rem;
 }
