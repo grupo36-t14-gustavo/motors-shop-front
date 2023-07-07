@@ -24,7 +24,7 @@ const UserAvatar = ({
 
     const handleLogoutUser = () => {
         localStorage.removeItem("token");
-        router.push("/login");
+        router.push("/");
     };
 
     return (

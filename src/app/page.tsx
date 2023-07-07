@@ -1,15 +1,14 @@
 "use client";
+import styles from "../styles/layoutGlobal.module.scss";
 import NavBar from "@/components/Global/NavBarNav";
 import Pagination from "@/components/Global/PaginationDiv";
 import ProductList from "@/components/Global/ProductListUl";
 import RightsContainer from "@/components/Global/RightsContainerDiv";
 import Banner from "@/components/Home/BannerSection";
 import FilterTab from "@/components/Home/FilterTabAside";
-import styles from "../styles/layoutGlobal.module.scss";
-import EditAdressModal from "@/components/Profile/EditAdressModalDiv";
-import { useEffect, useState } from "react";
 import { iReturnCarAd, listAllCarAds } from "@/services/api/CarAds";
 import { iCarAdListPagination } from "@/interfaces/carAds.interface";
+import { useEffect, useState } from "react";
 
 export default function Home() {
     const [carAdList, setCarAdList] = useState<iReturnCarAd[] | undefined>();
@@ -45,15 +44,17 @@ export default function Home() {
                         <ProductList carAdList={carAdList} />
                     </section>
 
-                    <Pagination pagination={pagination} setPagination={setPagination} setCarAdList={setCarAdList} />
+                    <Pagination
+                        pagination={pagination}
+                        setPagination={setPagination}
+                        setCarAdList={setCarAdList}
+                    />
                 </div>
             </main>
 
             <footer className={styles.body__footer}>
                 <RightsContainer />
             </footer>
-
-            {/* <EditAdressModal /> */}
         </>
     );
 }

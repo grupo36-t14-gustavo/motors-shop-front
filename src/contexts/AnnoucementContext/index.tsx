@@ -1,10 +1,8 @@
 // "use client";
 
-import { createContext, useEffect, useState } from "react";
+import { createContext, useState } from "react";
 import { IannouncementContext, IannouncementProviderProps } from "./types";
 import { IcarAnnouncement } from "@/components/ProfileViewer/Card/interfaces";
-import { iReturnPaginatedCarAds, listAllCarAds } from "@/services/api/CarAds";
-import { toast } from "react-toastify";
 
 export const AnnouncementContext = createContext({} as IannouncementContext);
 

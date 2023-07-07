@@ -4,7 +4,7 @@ import React, { useState } from "react";
 import { z } from "zod";
 import Button from "../Global/Button";
 import styles from "./style.module.scss";
-import { userLoginRoute } from "@/services/api/User";
+import { iUserLogin, userLoginRoute } from "@/services/api/User";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import BaseInput from "../Global/BaseInput";
@@ -15,7 +15,7 @@ const schemaLogin = z.object({
 });
 
 const LoginForm = () => {
-    const [userLogged, setUserLogged] = useState<string | null>();
+    const [userLogged, setUserLogged] = useState<iUserLogin>();
 
     const handleSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
         event.preventDefault();
@@ -29,14 +29,15 @@ const LoginForm = () => {
         try {
             const delay = 2000;
             const payload = schemaLogin.parse(data);
-            setUserLogged(data.email);
-
+            setUserLogged(payload);
             const token = await userLoginRoute(payload);
 
-            localStorage.setItem("token", token!.token);
+            if (token) {
+                localStorage.setItem("token", token.token);
+            }
 
             setTimeout(() => {
-                location.pathname = "/profile";
+                location.pathname = "/";
             }, delay);
             toast.success("Sucesso");
         } catch (error) {

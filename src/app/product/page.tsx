@@ -10,12 +10,19 @@ import PhotosAndProfileSection from "@/components/ProductPage/PhotosAndProfileSe
 import ProductOwnerDiv from "@/components/ProductPage/ProductOwnerDiv";
 import ProductImgListDiv from "@/components/ProductPage/ProductImgListDiv";
 import { useEffect } from "react";
+import globalStyles from "../../styles/layoutGlobal.module.scss";
+import RightsContainer from "@/components/Global/RightsContainerDiv";
+import TagContainer from "@/components/Global/TagContainerDiv";
 
 export default function Product() {
-    const carData = JSON.parse(localStorage.getItem("carData"));
+    const carDataString = localStorage.getItem("carData");
+    const carData = JSON.parse(carDataString);
+
+    const firstIndex = 0;
 
     useEffect(() => {
         const carDataStorage = localStorage.getItem("carData");
+        console.log(carData);
         if (!carDataStorage) {
             location.pathname = "/home";
         }
@@ -23,14 +30,20 @@ export default function Product() {
 
     return (
         <div>
-            <Background />
-            <header className={styles.body__header}>
+            <header className={globalStyles.body__header}>
                 <NavBar />
             </header>
+            <main className={globalStyles.body__main}>
+                <Background />
+            </main>
+
             <div className={styles.productsPage}>
                 <ProductSection>
                     <ProductImgDiv>
-                        <img src={carData.images[0]?.img} alt="product image" />
+                        <img
+                            src={carData.images[firstIndex]?.img}
+                            alt="product image"
+                        />
                     </ProductImgDiv>
                     <ProductInfoDiv>
                         <div>
@@ -38,15 +51,10 @@ export default function Product() {
                                 <h3>{carData.title}</h3>
                             </div>
                             <div>
-                                <div>
-                                    <span>
-                                        <h6>{carData.year}</h6>
-                                    </span>
-                                    <span>
-                                        <h6>{carData.km}</h6>
-                                        <h6>km</h6>
-                                    </span>
-                                </div>
+                                <TagContainer
+                                    km={carData.km}
+                                    year={carData.year}
+                                />
                                 <h4>R$: {carData.price}</h4>
                             </div>
                             <button>Comprar</button>
@@ -121,6 +129,9 @@ export default function Product() {
                     </div>
                 </PhotosAndProfileSection>
             </div>
+            <footer className={globalStyles.body__footer}>
+                <RightsContainer />
+            </footer>
         </div>
     );
 }
