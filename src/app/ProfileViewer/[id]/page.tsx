@@ -4,7 +4,7 @@ import AdMain from "@/components/ProfileViewer/Main";
 import { AnnouncementProvider } from "@/contexts/AnnoucementContext";
 import api from "@/services/api";
 import { UserProfile } from "@/components/ProfileViewer/Main/interfaces";
-
+import "../../../styles/reset.scss";
 const ProfileViewerPage = ({ params }: { params: { id: string } }) => {
     const [cars, setCars] = useState([]);
     const [user, setUser] = useState<UserProfile | null>(null);

@@ -1,11 +1,9 @@
 .div {
-    width: 90%;
-    max-width: 752px;
+    width: 100%;
+    max-width: 760px;
     display: flex;
     flex-direction: column;
+    justify-content: space-between;
     align-items: center;
-
-    justify-content: flex-start;
-    padding: 1.25rem;
-    gap: 24px;
+    gap: 16px;
 }

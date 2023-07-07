@@ -1,14 +1,24 @@
 @import "../../../styles/globalVariables.module.scss";
 
-.div {
+.div_divider {
+    width: 100%;
+    max-width: 440px;
+    padding: 36px 44px;
     background-color: $grey-10;
-    padding: 1.25rem;
     display: flex;
     flex-wrap: wrap;
+    gap: 32px;
+    border-radius: 4px;
+
+    .img_div {
+        display: flex;
+        justify-content: space-between;
+        flex-wrap: wrap;
+        gap: 14px 32px;
+    }
 
     img {
-        margin: 10px 0;
-        width: 33.33%;
-        padding: 8px;
+        max-width: 110px;
+        width: 100%;
     }
 }

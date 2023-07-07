@@ -1,9 +1,9 @@
 "use client";
+import styles from "./style.module.scss";
 import Image from "next/image";
 import userDefaultPhoto from "../../../assets/img/pngegg.png";
 import { useEffect, useState } from "react";
 import { useRouter } from "next/navigation";
-import styles from "./style.module.scss";
 import { iReturnUser, retrieveUserRoute } from "@/services/api/User";
 import NavBar from "@/components/Global/NavBarNav";
 import { Annoucement } from "../AnnouncementModalDiv";
@@ -19,6 +19,7 @@ const Profile = () => {
     const modalOpenAnnoucement = () => {
         setOpenModal(!openModal);
     };
+
     const modalClose = () => {
         setOpenModal(false);
     };
@@ -30,7 +31,12 @@ const Profile = () => {
             const user = await retrieveUserRoute(accessToken);
             if (user !== undefined) {
                 setUserData(user);
-            } else {
+            } else if(userData?.isAdmin){
+                router.push("/profile");
+            }else if(userData?.isAdmin === false){
+                router.push("/");
+            }
+            else  {
                 setUserData(null);
                 router.push("/login");
             }

@@ -1,11 +1,11 @@
 import styles from "./style.module.scss";
 
-interface iProductImgProps {
-    children: React.ReactElement;
-}
-
-const ProductImgDiv = ({ children }: iProductImgProps) => {
-    return <div className={styles.div}>{children}</div>;
+const ProductImgDiv = ({ image }: { image: string }) => {
+    return (
+        <div className={styles.div}>
+            <img src={image} alt="product image" />
+        </div>
+    );
 };
 
 export default ProductImgDiv;

@@ -1,6 +1,10 @@
 @import "../../../styles/globalVariables.module.scss";
 
 .div {
-    padding: 1.25rem;
-    margin-top: 1.25rem;
+    width: 100%;
+    max-width: 440px;
+
+    .div_container {
+        padding: 36px 44px;
+    }
 }

@@ -7,20 +7,22 @@
     border-radius: 0.25rem;
     border: none;
     max-width: 47.5rem;
-    margin-top: 10px;
-    padding: 1.875rem;
+    padding: 28px 44px;
+    display: flex;
+    flex-direction: column;
 
-    div > h3 {
-        display: flex;
-        justify-content: center;
-        color: $grey-1;
-        margin-bottom: 1.25rem;
+    & .info_title {
+        margin-bottom: 40px;
     }
 
-    div > div > div {
+    & .info_tag_and_price {
         display: flex;
-        justify-content: flex-start;
-        gap: 2%;
+        justify-content: space-between;
+    }
+
+    div > h3 {
+        text-align: center;
+        color: $grey-1;
     }
 
     div > div > div > span {
@@ -34,16 +36,16 @@
     }
 
     button {
+        width: 100px;
+        height: 38px;
+        margin-top: 28px;
         background-color: $brand1;
         color: $white-fixed;
         border-radius: 0.25rem;
-        border: none;
-        padding: 10px;
-        width: 90px;
-        margin: 20px 0 20px 0;
+        border: 1.5px solid $brand1;
     }
 
-    @media (min-width: 700px) {
+    @media (max-width: 700px) {
         :nth-child(2) {
             display: flex;
             justify-content: space-between;

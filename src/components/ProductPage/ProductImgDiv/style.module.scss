@@ -4,10 +4,11 @@
     background-color: $grey-10;
     border-radius: 0.25rem;
     width: 100%;
-    max-width: 47rem;
-    max-height: 47rem;
+    height: 355px;
     overflow: hidden;
-    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 
     img {
         width: 100%;
