@@ -1,4 +1,5 @@
 import motorshopApi, { returnAxiosError } from "..";
+import { iReturnCarAd } from "../CarAds";
 
 export interface iCreateUser {
     name: string;
@@ -10,6 +11,7 @@ export interface iCreateUser {
     bio?: string;
     avatar?: string;
     isAdmin?: boolean;
+    cars: iReturnCarAd[]
     address: {
         cep: string;
         state: string;
