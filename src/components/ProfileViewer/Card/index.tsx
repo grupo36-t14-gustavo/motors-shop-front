@@ -15,26 +15,31 @@ const Card = ({ listCars }: CardProps) => {
                     key={car.id}
                     onClick={() => router.push(`/anuncios-aqui/${car.id}`)}>
                     <div className={styles.imgContainer}>
-                        <img className={styles.img}
-                            // src={car.images}
-                            src="https://conteudo.imguol.com.br/c/esporte/9b/2020/07/24/dalessandro-pensativo-durante-treinamento-do-internacional-1595602614951_v2_3x4.jpg"
-                            alt="Imagem do veículo" />
+                        {car.images ? (
+                            <img className={styles.img}
+                                src={car.images}
+                                alt="Imagem do veículo" />
+                        ) : <img className={styles.img} src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR6pNEJ_8x5Qu2iS9an3lmosMeYDjjdy7MPc8itmGTPHvcAtps3OsiXeILrzJq8t7JP7Oo&usqp=CAU" alt="Imagem do veículo sem foto" />
+                        }
+                        <div className={styles.status}>
+                            <p>{car.isActive ? "Ativo" : "Inativo"}</p>
+                        </div>
                     </div>
                     <div className={styles.nameModelBox}>
                         <div className={styles.nameModel}>
                             <p>{car.brand}</p>
                             <span>-</span>
-                            <span>{car.model}</span>
+                            <p>{car.model}</p>
                         </div>
                         <div>
-                            <p>{car.description}</p>
+                            <p className={styles.description}>{car.description}</p>
                         </div>
                         <div className={styles.infoBuyCar}>
-                            <div>
-                                <span>{car.km} KM</span>
-                                <span>{car.year}</span>
+                            <div className={styles.infoCarNumbersBox}>
+                                <span className={styles.infoCarNumbers}>{car.km} KM</span>
+                                <span className={styles.infoCarNumbers}>{car.year}</span>
                             </div>
-                            <span>
+                            <span className={styles.price}>
                                 {car.price.toLocaleString("pt-br", {
                                     style: "currency",
                                     currency: "BRL",

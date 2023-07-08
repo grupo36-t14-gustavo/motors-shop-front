@@ -2,8 +2,50 @@
 @import "../../../styles/globalVariables.module.scss";
 
 .imgContainer {
-    width: 250px;
+    position: relative;
+    max-width: 250px;
     height: 210px;
+}
+
+@media (max-width: 617px) {
+    .imgContainer{
+        width: 420px;
+        height: 220px;
+    }
+}
+
+.infoCarNumbersBox {
+    display: flex;
+    flex-direction: row;
+    gap: 8px;
+}
+
+.price {
+    color: $grey-1;
+}
+
+.infoCarNumbers {
+    background-color: $brand4;
+    color: $brand1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 4px;
+    padding: 0.25rem 0.5rem;
+    gap: 0.625rem;
+}
+
+.status {
+    position: absolute;
+    top: 5%;
+    left: 5%;
+    background-color: $brand1;
+    color: $white-fixed;
+    padding: 5px;
+    border-radius: 2px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .img {
@@ -11,9 +53,16 @@
     height: 100%;
 }
 
+.description {
+    margin-bottom: 15px;
+    color: $grey-2;
+}
+
 .nameModel {
     display: flex;
     gap: 10px;
+    margin: 13px 0px 15px 0px;
+    color: $grey-1;
 }
 
 .nameModelBox {
@@ -22,5 +71,5 @@
 .infoBuyCar {
     display: flex;
     justify-content: space-between;
-    
+    margin-bottom: 15px;
 }

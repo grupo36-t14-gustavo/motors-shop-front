@@ -29,6 +29,7 @@ const LoginForm = () => {
         try {
             const delay = 2000;
             const payload = schemaLogin.parse(data);
+
             setUserLogged(data.email);
 
             const token = await userLoginRoute(payload);
@@ -42,6 +43,9 @@ const LoginForm = () => {
         } catch (error) {
             toast.error("Ops! Verique o campo de email e senha.");
         }
+        // catch (error) {
+        //     toast.error("Verifique se os dados estão corretos");
+        // }
     };
 
     return (

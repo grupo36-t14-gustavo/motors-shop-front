@@ -4,6 +4,7 @@ import AdMain from "@/components/ProfileViewer/Main";
 import { AnnouncementProvider } from "@/contexts/AnnoucementContext";
 import api from "@/services/api";
 import { UserProfile } from "@/components/ProfileViewer/Main/interfaces";
+import Background from "@/components/Global/Background";
 
 const ProfileViewerPage = ({ params }: { params: { id: string } }) => {
     const [cars, setCars] = useState([]);
@@ -31,6 +32,7 @@ const ProfileViewerPage = ({ params }: { params: { id: string } }) => {
     return (
         <>
             <AnnouncementProvider listCars={cars}>
+                <Background/>
                 <div>
                     <AdMain user={user} userLogged={user.email} />
                 </div>
