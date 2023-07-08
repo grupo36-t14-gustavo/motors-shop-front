@@ -1,4 +1,5 @@
-import { IcarAnnouncement } from "../Card";
+import { IcarAnnouncement } from "../Card/interfaces";
+
 
 export interface UserProfile {
   id: string;

@@ -30,10 +30,10 @@ const LoginForm = () => {
         try {
 
             schemaLogin.parse(data);
-            await userLoginRoute(data)
+            await userLoginRoute(data);
             setUserLogged(data.email);
         } catch (error) {
-            alert(error)
+            alert(error);
             //tratar o erro com o toast
             const delay = 2000;
             const payload = schemaLogin.parse(data);
@@ -43,9 +43,10 @@ const LoginForm = () => {
                 location.pathname = "/product";
             }, delay);
             toast.success("Sucesso");
-        } catch (error) {
-            toast.error("Verifique se os dados estão corretos");
         }
+        // catch (error) {
+        //     toast.error("Verifique se os dados estão corretos");
+        // }
     };
 
     return (

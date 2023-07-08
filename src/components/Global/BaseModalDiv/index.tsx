@@ -7,7 +7,6 @@ const BaseModal = ({ children }: { children: ReactNode }) => {
             <div className={styles.background__container}>
                 <div className={styles.container__heading}>
                     <h2>Criar anúncio</h2>
-                    <button>X</button>
                 </div>
                 {children}
             </div>
