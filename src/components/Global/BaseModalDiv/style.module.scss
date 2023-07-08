@@ -3,6 +3,7 @@
 .modal__background {
     width: 100vw;
     height: 100vh;
+    padding: 80px;
     top: 0;
     left: 0;
     position: fixed;
@@ -19,6 +20,7 @@
         padding: 20px 25px;
         background-color: $white-fixed;
         border-radius: 8px;
+        align-self: flex-start;
 
         & .container__heading {
             width: 100%;

@@ -1,26 +1,16 @@
 "use client";
-import { toast } from 'react-toastify';
-import 'react-toastify/dist/ReactToastify.css';
-import React, { useState } from "react";
+import { toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
+import { ChangeEvent, FormEvent, useState } from "react";
 import { z } from "zod";
 import Button from "../Global/Button/index";
-import Input from "../Global/Input/index";
-import InputPassword from "../Global/Input/input.Password";
-import Label from "../Global/Label/index";
 import styles from "./style.module.scss";
-import { registerUserRoute } from "@/services/api/User";
-import {useRouter} from "next/navigation";
+import UserFormInputs from "../Global/UserFormInputs";
+import AdressFormInputs from "../Global/AdressFormInputs";
+import { createUserWithAdressRoute } from "@/services/api/User";
+import { useRouter } from "next/navigation";
+import BaseInput from "../Global/BaseInput";
 
-const schemaRegister = z.object({
-    name: z.string(),
-    email: z.string().email(),
-    avatar:z.string().url(),
-    password: z.string(),
-    birthdate: z.string(),
-    cellphone: z.string(),
-    cpf: z.string(),
-    isAdmin: z.boolean().optional().default(false)
-});
 const schemaAddress = z.object({
     cep: z.string(),
     state: z.string(),
@@ -28,118 +18,120 @@ const schemaAddress = z.object({
     street: z.string(),
     number: z.string(),
     complement: z.string(),
-});  
+});
 
-const FormRegister = () =>{
-    const router = useRouter()
+const schemaRegister = z.object({
+    name: z.string(),
+    email: z.string().email(),
+    avatar: z.string().url().optional(),
+    password: z.string(),
+    birthdate: z.string(),
+    cellphone: z.string(),
+    cpf: z.string(),
+    bio: z.string(),
+    isAdmin: z.boolean().optional().default(false),
+    address: schemaAddress,
+});
+
+const FormRegister = () => {
+    const router = useRouter();
     const [userType, setUserType] = useState(false);
+    const [userData, setUserData] = useState({});
+    const [adressData, setAdressData] = useState({});
 
-    const handleSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
+    const handleSubmit = async (event: FormEvent<HTMLFormElement>) => {
         event.preventDefault();
-        
-        const formData = new FormData(event.currentTarget);
-      
-        const data = {
-            name: formData.get("nameUserNew"),
-            email: formData.get("EmailUserNew"),
-            avatar: formData.get("avatarUser"),
-            password: formData.get("password"),
-            birthdate: formData.get("birthdate"),
-            cellphone: formData.get("cellphone"),
-            cpf: formData.get("cpf"),
-            bio: formData.get("bioUser"),
-            isAdmin: userType,
-            address:{
-                cep: formData.get("cep"),
-                state: formData.get("state"),
-                city: formData.get("city"),
-                street: formData.get("street"),
-                number: formData.get("number"),
-                complement: formData.get("complement")
-            }
-         
-        };
-   
 
-  
+        const formData = {
+            ...userData,
+            isAdmin: userType,
+            address: adressData,
+        };
+
         try {
-            schemaRegister.parse(data);
-            schemaAddress.parse(data.address);
-       
-            await registerUserRoute(data);
+            const maxTimeoutMs = 3000;
+            const parsedUserData = schemaRegister.parse(formData);
+
             toast.success("Conta registrada com sucesso");
-            router.push("/login")
-            
-            
-        } catch (error) {
-           toast.error("Email ja registrado.");
-        
+
+            await createUserWithAdressRoute(parsedUserData);
+
+            setTimeout(() => {
+                router.push("/login/");
+            }, maxTimeoutMs);
+        } catch (err) {
+            toast.error("Credenciais inválidas.");
         }
     };
 
-    return(
+    const handleChange = async (event: ChangeEvent<HTMLInputElement>) => {
+        const { name, value } = event.currentTarget;
+
+        setUserData((prevUserData) => ({
+            ...prevUserData,
+            [name]: value,
+        }));
+    };
+
+    return (
         <div className={styles.container_form}>
-            <div className={styles.style_div_form} >
+            <div className={styles.style_div_form}>
                 <span>
-                
-                    <p className={styles.title_register} >Cadastro</p>
+                    <p className={styles.title_register}>Cadastro</p>
                 </span>
 
-          
-                <form onSubmit={handleSubmit} className={styles.form} >
-                    <p className={styles.title_info} >Informações pessoais</p>
-                    <Label htmlFor="nameUserNew" name="Nome"/>
-                    <Input id="nameUserNew" name="nameUserNew" placeholder="como gostaria de ser chamado?"/>
-                    <Label htmlFor="EmailUserNew" name="Email"/>
-                    <Input id="EmailUserNew" name="EmailUserNew" placeholder="Qual é seu email?" />
-                    <Label htmlFor="avatarUser" name="Avatar"/>
-                    <Input id="avatarUser" name="avatarUser" placeholder="Qual é seu email?" />
-                    <Label htmlFor="password" name="Senha"/>
-                    <InputPassword  id="password" name="password" placeholder="lembre-se de criar uma senha segura." />
-                    <Label htmlFor="birthdate"name="Data de nascimento"/>
-                    <Input id="birthdate" name="birthdate" placeholder="Digite sua data de nascimento exemplo: 17/05/2004"/>
-                    <Label htmlFor="cellphone" name="Telefone"/>
-                    <Input id="cellphone" name="cellphone" placeholder="qual é seu número?" />
-                    <Label htmlFor="cpf" name="Cpf"/>
-                    <Input id="cpf" name="cpf" placeholder="Qual é seu cpf?"/>
-                    <Label htmlFor="bioUser" name="Bio"/>
-                    <Input id="bioUser" name="bioUser" placeholder="Escreva Sobre voçê." />
-                    <p className={styles.title_address_form_register} >Endereço</p>
-                    <Label htmlFor="cep" name="Cep"/>
-                    <Input id="cep" name="cep" placeholder="digite seu cep"/>
-                    <Label htmlFor="state" name="Estado"/>
-                    <Input id="state" name="state" placeholder="Qual é seu estado?"/>
+                <form onSubmit={handleSubmit} className={styles.form}>
+                    <p className={styles.title_info}>Informações pessoais</p>
 
-                    <Label htmlFor="city" name="Cidade"/>
-                    <Input id="city" name="city" placeholder="qual é sua cidade"/> 
+                    <UserFormInputs setFormData={setUserData} />
 
-                    <Label htmlFor="street" name="Rua"/>
-                    <Input id="street" name="street" placeholder="Qualé sua rua?"/>
-                    <span className={styles.span_complement_user} >
-                        <span>
-                            <label  className={styles.label_complement_and_number} htmlFor="number">Número</label>
-                            <input className={styles.input_complement_and_number} type="text"  id="number" placeholder="Qual é o numero da sua residência?" name="number"/>
-                        </span>
+                    <AdressFormInputs setFormData={setAdressData} />
 
-                        <span>
-                            <label className={styles.label_complement_and_number}  htmlFor="complement">Complemento</label>
-
-                            <input className={styles.input_complement_and_number} id="complement" name="complement" type="text" placeholder="Ex: Prédio azul"/>
-                        </span>
-
+                    <p className={styles.p_title_for_type_user}>
+                        Tipo de úsuario
+                    </p>
+                    <span className={styles.span_for_type_user}>
+                        <input
+                            className={`${styles.button_for_type_user} ${
+                                userType === true ? styles.active_button : ""
+                            }`}
+                            type="button"
+                            value="Vendedor"
+                            id="button_clicked"
+                            onClick={() => setUserType(true)}
+                        />
+                        <input
+                            className={`${styles.button_for_type_user} ${
+                                userType === false ? styles.active_button : ""
+                            }`}
+                            type="button"
+                            value="Comprador"
+                            id="button_clicked"
+                            onClick={() => setUserType(false)}
+                        />
                     </span>
-                    <p className= {styles.p_title_for_type_user}>Tipo de úsuario</p>
-                    <span className={styles.span_for_type_user} >
-                        <input className={`${styles.button_for_type_user} ${userType === true ? styles.button_for_type_user_active : ""}`} type="button" value="Vendedor" id="button_clicked" onClick={() => setUserType(true)} />
-                        <input className={`${styles.button_for_type_user} ${userType === false ? styles.button_for_type_user_active : ""}`} type="button" value="Comprador" id="button_clicked" onClick={() => setUserType(false)} />
-      
-                    </span>
-            
-                    <Button name="Finalizar cadastro"/>
-                    
+
+                    <BaseInput
+                        type="password"
+                        name="password"
+                        placeholder="Digitar Senha"
+                        label="Senha"
+                        handleChange={handleChange}
+                    />
+
+                    <BaseInput
+                        type="password"
+                        name="password"
+                        placeholder="Digitar Senha"
+                        label="Confirmar senha"
+                        handleChange={handleChange}
+                    />
+
+                    <Button name="Finalizar cadastro" isSubmit={true} />
                 </form>
             </div>
         </div>
     );
 };
+
 export default FormRegister;
