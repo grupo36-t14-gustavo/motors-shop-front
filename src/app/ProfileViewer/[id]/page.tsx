@@ -16,9 +16,7 @@ const ProfileViewerPage = ({ params }: { params: { id: string } }) => {
                 const responseCar = await api.get(`cars/ads/${params.id}`);
                 const responseUser = await api.get(`users/${params.id}`);
                 setCars(responseCar.data);
-                console.log("Car", responseCar.data);
                 setUser(responseUser.data);
-                console.log("User", responseUser.data);
             } catch (error) {
                 console.error(error);
             }
@@ -28,7 +26,6 @@ const ProfileViewerPage = ({ params }: { params: { id: string } }) => {
     }, [params.id]);
 
     if (user === null) {
-        console.log(user);
         return <div>Loading...</div>;
     }
 

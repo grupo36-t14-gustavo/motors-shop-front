@@ -3,7 +3,8 @@
     display: flex;
     flex-direction: column;
     width: 316px;
-    gap: 11px;
+    gap: 9px;
+    border-radius: 5px;
 }
 .container_form {
     display: flex;
@@ -14,7 +15,7 @@
     align-items: center;
     width: 400px;
     background: $white-fixed;
-    height: 370px;
+    height: 450px;
     margin: 0 auto;
 }
 .span_tittle_form_login {

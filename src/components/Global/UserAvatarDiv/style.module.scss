@@ -1,8 +1,37 @@
+@import "../../../styles/globalVariables.module.scss";
+@import "../../../styles/globalFonts.module.scss";
 .avatar__container {
     width: 32px;
     height: 32px;
     border-radius: 50%;
+    cursor:pointer;
 
-    .container__img {
+    .ul_menu{
+
+    }
+}
+.menubar_hamburguer {
+    left: 0;
+    background-color: $white-fixed;
+    padding: 10px;
+    height: 180px;
+    width: 120px;
+    border: 1px solid #4529e6;
+    border-radius: 10px;
+    margin-left: -25px;
+
+    & .ul_menu {
+        list-style-type: none;
+    }
+    & .li_menu {
+        padding: 8px 16px;
+        cursor: pointer;
+    }
+    .li_menu:hover {
+        background-color: $white-fixed;
+        color: $brand1;
+    }
+    & .user_image {
+        cursor: pointer;
     }
 }

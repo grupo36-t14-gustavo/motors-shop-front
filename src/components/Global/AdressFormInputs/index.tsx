@@ -2,6 +2,8 @@ import { ChangeEvent, Dispatch, SetStateAction } from "react";
 import BaseInput from "../BaseInput";
 import { tEditAdress } from "@/interfaces/user.interface";
 import { iCreateAdress } from "@/services/api/Adress";
+import fontStyles from "../../../styles/globalFonts.module.scss";
+import styles from "./style.module.scss";
 
 const AdressFormInputs = ({
     setFormData,
@@ -19,14 +21,16 @@ const AdressFormInputs = ({
 
     return (
         <>
-            <h3>Informações de Endereço</h3>
+            <h3 className={`${fontStyles.body_2_500}`}>
+                Informações de Endereço
+            </h3>
             <BaseInput
                 name="cep"
                 placeholder="12345-678"
                 label="CEP"
                 handleChange={handleChange}
             />
-            <div>
+            <div className={`${styles.input_shrink}`}>
                 <BaseInput
                     name="state"
                     placeholder="Paraná"
@@ -46,7 +50,7 @@ const AdressFormInputs = ({
                 label="Rua"
                 handleChange={handleChange}
             />
-            <div>
+            <div className={`${styles.input_shrink}`}>
                 <BaseInput
                     name="number"
                     placeholder="1040"

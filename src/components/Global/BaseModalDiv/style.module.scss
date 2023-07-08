@@ -12,6 +12,7 @@
     align-items: center;
     background-color: rgba($color: $grey-0, $alpha: 0.5);
     z-index: 1;
+    overflow-y: auto;
 
     & .background__container {
         width: 100%;
@@ -29,4 +30,15 @@
             justify-content: space-between;
         }
     }
+}
+.button_close{
+    border: none;
+    background-color: $white-fixed;
+    cursor:pointer;
+}
+.font_style_h2{
+    font-family: $font-inter;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 14px;
 }

@@ -1,40 +1,33 @@
 "use client";
 import Image from "next/image";
-import userDefaultPhoto from "../../assets/img/pngegg.png";
-import logoImage from "../../assets/img/Motors.png";
+import userDefaultPhoto from "../../../assets/img/pngegg.png";
 import { useEffect, useState } from "react";
 import { useRouter } from "next/navigation";
 import styles from "./style.module.scss";
-import { Annoucement } from "../AnnouncementModalDiv/index2";
-import { retrieveUserRoute } from "@/services/api/User";
-import { User } from "../../../interfaces/profile.interface";
+import { iReturnUser, retrieveUserRoute } from "@/services/api/User";
+import NavBar from "@/components/Global/NavBarNav";
+import { Annoucement } from "../AnnouncementModalDiv";
+import ProductList from "@/components/Global/ProductListUl";
 
 const Profile = () => {
-    const [openMenu, setMenuOpen] = useState(false);
-    const [openModal, setModal] = useState(false);
-    const [userData, setUserData] = useState<User | null>(null);
-    console.log(userData, "data user");
-    const typeUSer = userData?.isAdmin ? "Anunciante" : "Comprador";
+    const [openModal, setOpenModal] = useState(false);
+    const [userData, setUserData] = useState<iReturnUser | null>(null);
 
     const router = useRouter();
-    const handleMenu = () => {
-        setMenuOpen(!openMenu);
-    };
-    const handleLogoutUser = () => {
-        localStorage.removeItem("token");
-        router.push("/login");
-    };
+    const typeUSer = userData?.isAdmin ? "Anunciante" : "Comprador";
+
     const modalOpenAnnoucement = () => {
-        setModal(!openModal);
+        setOpenModal(!openModal);
     };
     const modalClose = () => {
-        setModal(false);
+        setOpenModal(false);
     };
 
     useEffect(() => {
         const fetchData = async () => {
             const accessToken = localStorage.getItem("token") || "";
-            const user: User = await retrieveUserRoute(accessToken);
+            console.log(accessToken);
+            const user = await retrieveUserRoute(accessToken);
             if (user !== undefined) {
                 setUserData(user);
             } else {
@@ -48,43 +41,8 @@ const Profile = () => {
 
     return (
         <>
+            <NavBar />
             <div className={styles.div_conteiner_blue}>
-                <nav className={styles.nav_user}>
-                    <Image src={logoImage} alt="logo" />
-                    <span onClick={handleMenu} className={styles.span_nav_user}>
-                        {/* {userData?.avatar ? (
-                            <Image
-                                // src={userData.avatar}
-                                src={
-                                    "https://img.assinaja.com/upl/lojas/mundosinfinitos/imagens/foto-personagem-batman.jpg"
-                                }
-                                alt="Avatar"
-                                width={20}
-                                height={20}
-                            />
-                        ) : (
-                            <Image
-                                src={userDefaultPhoto}
-                                alt="Default Avatar"
-                            />
-                        )} */}
-                        <Image src={userDefaultPhoto} alt="Default Avatar" />
-                        <p className={styles.profile_name}>{userData?.name}</p>
-                        {openMenu && (
-                            <div className={styles.menubar_hamburguer}>
-                                <ul className={styles.ul_menu}>
-                                    <li className={styles.li_menu}>Perfil</li>
-                                    <li
-                                        className={styles.li_menu}
-                                        onClick={handleLogoutUser}
-                                    >
-                                        Sair
-                                    </li>
-                                </ul>
-                            </div>
-                        )}
-                    </span>
-                </nav>
                 <main className={styles.main_conteiner_info_user}>
                     {/* {userData?.avatar ? (
                         <Image
@@ -133,8 +91,12 @@ const Profile = () => {
                     </span>
                     {openModal && <Annoucement closeModal={modalClose} />}
                 </main>
+                <section className={styles.ads}>
+                    <ProductList carAdList={userData?.cars} />
+                </section>
             </div>
         </>
     );
 };
+
 export default Profile;

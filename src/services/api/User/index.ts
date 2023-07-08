@@ -1,5 +1,5 @@
-import { User } from "@/interfaces/profile.interface";
 import motorshopApi, { returnAxiosError } from "..";
+import { iReturnCarAd } from "../CarAds";
 
 export interface iCreateUser {
     name: string;
@@ -11,6 +11,7 @@ export interface iCreateUser {
     bio?: string;
     avatar?: string;
     isAdmin?: boolean;
+    cars: iReturnCarAd[]
     address: {
         cep: string;
         state: string;
@@ -73,7 +74,9 @@ export const userLoginRoute = async (
     }
 };
 
-export const retrieveUserRoute = async (accessToken: string) => {
+export const retrieveUserRoute = async (
+    accessToken: string
+): Promise<iReturnUser | undefined> => {
     try {
         const retrievedUser = await motorshopApi.get("users/", {
             headers: {
